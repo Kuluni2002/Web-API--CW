@@ -30,19 +30,16 @@ const operatorSchema = new mongoose.Schema({
         trim: true,
         uppercase: true,
         match: [/^[A-Z0-9]+$/, 'Permit number must contain only letters and numbers']
-    },
-    isActive: {
-        type: Boolean,
-        default: true
     }
+    
 }, {
     timestamps: true
 });
 
 // Index for efficient queries
-operatorSchema.index({ name: 1 });
-operatorSchema.index({ permitNumber: 1 });
-operatorSchema.index({ isActive: 1 });
+//operatorSchema.index({ name: 1 });
+//operatorSchema.index({ permitNumber: 1 });
+//operatorSchema.index({ isActive: 1 });
 
 // Instance method to toggle active status
 operatorSchema.methods.toggleActive = function() {

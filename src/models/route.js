@@ -59,13 +59,16 @@ const routeSchema = new mongoose.Schema({
             },
             message: 'Route must have at least 2 stops (start and end)'
         }
-    },
-    isActive: {
-        type: Boolean,
-        default: true
     }
 }, {
-    timestamps: true
+    timestamps: true,
+
+    validate: {
+        validator: function() {
+            return this.startLocation.toLowerCase() !== this.endLocation.toLowerCase();
+        },
+        message: 'Start and end locations must be different'
+    }
 });
 
 // Virtual for total minutes
@@ -83,8 +86,8 @@ routeSchema.virtual('formattedDuration').get(function() {
 });
 
 // Index for efficient queries
-routeSchema.index({ routeNumber: 1 });
-routeSchema.index({ isActive: 1 });
+//routeSchema.index({ routeNumber: 1 });
+//routeSchema.index({ isActive: 1 });
 
 // Virtual for stop count
 routeSchema.virtual('stopCount').get(function() {

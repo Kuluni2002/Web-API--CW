@@ -5,7 +5,7 @@ const locationSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Trip',
         required: [true, 'Trip reference is required'],
-        index: true
+        //index: true
     },
     latitude: {
         type: Number,

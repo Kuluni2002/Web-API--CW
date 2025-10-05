@@ -74,7 +74,7 @@ const tripSchema = new mongoose.Schema({
 });
 
 // Indexes for efficient queries
-tripSchema.index({ runningNumber: 1 }, { unique: true });
+//tripSchema.index({ runningNumber: 1 }, { unique: true });
 tripSchema.index({ bus: 1 });
 tripSchema.index({ route: 1 });
 tripSchema.index({ operator: 1 });

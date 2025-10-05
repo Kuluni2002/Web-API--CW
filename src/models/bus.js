@@ -33,7 +33,7 @@ const busSchema = new mongoose.Schema({
 });
 
 // Index for efficient queries
-busSchema.index({ registrationNumber: 1 });
+//busSchema.index({ registrationNumber: 1 });
 busSchema.index({ operator: 1 });
 busSchema.index({ route: 1 });
 busSchema.index({ type: 1 });

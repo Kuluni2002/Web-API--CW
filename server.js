@@ -4,6 +4,14 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
+// Import models to register them with mongoose
+require('./src/models/user');
+require('./src/models/operator');
+require('./src/models/route');
+require('./src/models/bus');
+require('./src/models/trip');
+require('./src/models/location');
+
 // Create Express app
 const app = express();
 
