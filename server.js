@@ -21,9 +21,11 @@ app.use(express.json()); // Understand JSON data
 
 // Import routes
 const authRoutes = require('./src/routes/authRoutes');
+const operatorRoutes = require('./src/routes/operatorRoutes');
 
 // Mount routes
 app.use('/api/auth', authRoutes);
+app.use('/api/operators', operatorRoutes);
 
 // Test route - this is your first API endpoint!
 app.get('/', (req, res) => {
