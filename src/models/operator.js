@@ -4,7 +4,7 @@ const operatorSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'Operator name is required'],
-        unique: true,
+       // unique: true,
         trim: true,
         minlength: [3, 'Operator name must be at least 3 characters long'],
         maxlength: [100, 'Operator name cannot exceed 100 characters']
@@ -18,7 +18,7 @@ const operatorSchema = new mongoose.Schema({
     email: {
         type: String,
         required: [true, 'Email is required'],
-        unique: true,
+        // unique: true,
         trim: true,
         lowercase: true,
         match: [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email']

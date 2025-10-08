@@ -21,6 +21,34 @@ const createOperator = async (req, res) => {
             }
         });
     } catch (error) {
+        console.error('Create operator error:', error);
+        
+        // Handle MongoDB duplicate key error (E11000)
+        if (error.code === 11000) {
+            // Check which field caused the duplicate
+            if (error.keyPattern?.permitNumber) {
+                return res.status(409).json({
+                    success: false,
+                    message: 'Operator with this permit number already exists'
+                });
+            }
+            // Generic duplicate message if field isn't clear
+            return res.status(409).json({
+                success: false,
+                message: 'Duplicate entry detected'
+            });
+        }
+        
+        // Handle Mongoose validation errors
+        if (error.name === 'ValidationError') {
+            return res.status(400).json({
+                success: false,
+                message: 'Validation failed',
+                error: error.message
+            });
+        }
+        
+        // Generic server error
         res.status(500).json({
             success: false,
             message: 'Server error',

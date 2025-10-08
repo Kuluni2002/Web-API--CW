@@ -30,7 +30,7 @@ GET /api/auth/me
 Positive Test Cases
 
 
-TC-001: Register New User
+TC-AU-001: Register New User
 
 Objective: Verify that a new user can successfully register
 Endpoint: POST /api/auth/register
@@ -78,7 +78,7 @@ Result: PASS
 
 
 
-TC-002: Login With Correct Credentials
+TC-AU-002: Login With Correct Credentials
 
 Objective: Verify that a user can log in with correct credentials
 Endpoint: POST /api/auth/login
@@ -123,7 +123,7 @@ Token valid for 7 days
 Result: PASS
 
 
-TC-003: Access Protected Route - With Valid Token
+TC-AU-003: Access Protected Route - With Valid Token
 
 
 Objective: Verify that authenticated users can access protected routes
@@ -148,8 +148,8 @@ json{
       "username": "admin1",
       "email": "admin1@ntc.lk",
       "role": "admin",
-      "createdAt": "2025-01-06T10:30:45.123Z",
-      "updatedAt": "2025-01-06T10:30:45.123Z",
+      "createdAt": "2025-10-06T10:30:45.123Z",
+      "updatedAt": "2025-10-06T10:30:45.123Z",
       "__v": 0
     }
   }
@@ -169,7 +169,7 @@ Result: PASS
 Negative Test Cases
 
 
-TC-004: Access Protected Route - Without Token
+TC-AU-004: Access Protected Route - Without Token
 
 Objective: Verify that unauthenticated requests are rejected
 Endpoint: GET /api/auth/me
@@ -199,7 +199,7 @@ Result: PASS (Correctly blocks unauthorized access)
 
 
 
-TC-005: Register Duplicate USer
+TC-AU-005: Register Duplicate USer
 
 Objective: Verify that duplicate user registration is prevented
 Endpoint: POST /api/auth/register
@@ -236,7 +236,7 @@ No duplicate users created
 Result: PASS (Correctly prevents duplicate registration)
 
 
-TC-006: User Login With Wrong Password
+TC-AU-006: User Login With Wrong Password
 
 Objective: Verify that login fails with incorrect password
 Endpoint: POST /api/auth/login
@@ -270,7 +270,7 @@ Security best practice followed
 Result: PASS (Correctly rejects invalid credentials)
 
 
-TC-007: User Login With  Non-Existent Email
+TC-AU-007: User Login With  Non-Existent Email
 
 Objective: Verify that login fails for non-existent user
 Endpoint: POST /api/auth/login
@@ -303,7 +303,7 @@ Doesn't reveal if email exists in system
 Result: PASS (Correctly handles non-existent user)
 
 
-TC-008: User Registration With Missing Required Fields
+TC-AU-008: User Registration With Missing Required Fields
 
 Objective: Verify that registration validates all required fields
 Endpoint: POST /api/auth/register
@@ -337,7 +337,7 @@ User not created
 Result: PASS (Correctly validates all required fields for registration)
 
 
-TC-009: User Login With Missing Password
+TC-AU-009: User Login With Missing Password
 
 Objective: Verify that login requires both email and password
 Endpoint: POST /api/auth/login
@@ -370,7 +370,7 @@ Bad request status code
 Result: PASS (Correctly validates required fields for login)
 
 
-TC-011: Access Protected Route With Invalid Token
+TC-AU-010: Access Protected Route With Invalid Token
 
 Objective: Verify that invalid/malformed tokens are rejected
 Endpoint: GET /api/auth/me
