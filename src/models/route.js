@@ -50,25 +50,64 @@ const routeSchema = new mongoose.Schema({
             max: [59, 'Minutes cannot exceed 59']
         }
     },
-    stops: {
-        type: [String],
-        required: [true, 'At least one stop is required'],
-        validate: {
-            validator: function(stops) {
-                return stops && stops.length >= 2;
-            },
-            message: 'Route must have at least 2 stops (start and end)'
+
+    operatorId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Operator',
+        required: [true, 'Operator ID is required']
+    },
+
+   stops: [{
+        locationId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Location',
+            required: [true, 'Location ID is required']
+        },
+        order: {
+            type: Number,
+            required: [true, 'Stop order is required'],
+            min: [1, 'Stop order must start from 1']
+        },
+        estimatedArrivalTime: {
+            type: String,
+            validate: {
+                validator: function(v) {
+                    // Validates HH:MM format (24-hour)
+                    return !v || /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(v);
+                },
+                message: 'Arrival time must be in HH:MM format (24-hour)'
+            }
         }
-    }
+    }],
 }, {
     timestamps: true,
+});
 
-    validate: {
-        validator: function() {
-            return this.startLocation.toLowerCase() !== this.endLocation.toLowerCase();
-        },
-        message: 'Start and end locations must be different'
+// Custom validation for the entire document
+routeSchema.pre('validate', function(next) {
+    // Ensure start and end locations are different
+    if (this.startLocation && this.endLocation) {
+        if (this.startLocation.toLowerCase() === this.endLocation.toLowerCase()) {
+            this.invalidate('endLocation', 'Start and end locations must be different');
+        }
     }
+    
+    // Ensure at least 2 stops
+    if (this.stops && this.stops.length < 2) {
+        this.invalidate('stops', 'Route must have at least 2 stops');
+    }
+    
+    // Validate stop order sequence
+    if (this.stops && this.stops.length > 1) {
+        const orders = this.stops.map(stop => stop.order).sort((a, b) => a - b);
+        const expectedOrders = Array.from({length: orders.length}, (_, i) => i + 1);
+        
+        if (JSON.stringify(orders) !== JSON.stringify(expectedOrders)) {
+            this.invalidate('stops', 'Stop orders must be sequential starting from 1');
+        }
+    }
+    
+    next();
 });
 
 // Virtual for total minutes
@@ -104,5 +143,58 @@ routeSchema.methods.toggleActive = function() {
 routeSchema.statics.findActiveRoutes = function() {
     return this.find({ isActive: true });
 };
+
+// Instance method to add stop
+routeSchema.methods.addStop = function(locationId, order, arrivalTime) {
+    // Check if order already exists
+    const existingStop = this.stops.find(stop => stop.order === order);
+    if (existingStop) {
+        throw new Error(`Stop with order ${order} already exists`);
+    }
+    
+    this.stops.push({
+        locationId,
+        order,
+        estimatedArrivalTime: arrivalTime
+    });
+    
+    // Sort stops by order
+    this.stops.sort((a, b) => a.order - b.order);
+    
+    return this.save();
+};
+
+// Static method to find routes by operator
+routeSchema.statics.findByOperator = function(operatorId) {
+    return this.find({ operatorId }).populate('operatorId', 'name permitNumber contactNumber');
+};
+
+// Static method to find routes with stops populated
+routeSchema.statics.findWithPopulatedStops = function(query = {}) {
+    return this.find(query)
+        .populate('operatorId', 'name permitNumber contactNumber')
+        .populate('stops.locationId', 'name coordinates type address')
+        .sort({ routeNumber: 1 });
+};
+
+// Index for efficient queries
+routeSchema.index({ routeNumber: 1 });
+routeSchema.index({ status: 1 });
+routeSchema.index({ operatorId: 1 });
+routeSchema.index({ 'stops.locationId': 1 });
+
+// Compound index for operator and status
+routeSchema.index({ operatorId: 1, status: 1 });
+
+// Transform function to clean up output
+routeSchema.set('toJSON', {
+    virtuals: true,
+    transform: function(doc, ret) {
+        ret.id = ret._id;
+        delete ret._id;
+        delete ret.__v;
+        return ret;
+    }
+});
 
 module.exports = mongoose.model('Route', routeSchema);
