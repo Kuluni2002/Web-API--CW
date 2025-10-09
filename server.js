@@ -24,12 +24,14 @@ const authRoutes = require('./src/routes/authRoutes');
 const operatorRoutes = require('./src/routes/operatorRoutes');
 const routeRoutes = require('./src/routes/routeRoutes');
 const busRoutes = require('./src/routes/busRoutes');
+const tripRoutes = require('./src/routes/tripRoutes');
 
 // Mount routes
 app.use('/api/auth', authRoutes);
 app.use('/api/operators', operatorRoutes);
 app.use('/api/routes', routeRoutes);
 app.use('/api/buses', busRoutes);
+app.use('/api/trips', tripRoutes);
 
 // Test route - this is your first API endpoint!
 app.get('/', (req, res) => {
