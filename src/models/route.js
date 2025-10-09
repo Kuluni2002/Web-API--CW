@@ -41,7 +41,7 @@ const routeSchema = new mongoose.Schema({
             type: Number,
             required: true,
             min: [0, 'Hours cannot be negative'],
-            max: [12, 'Hours cannot exceed 10']
+            max: [12, 'Hours cannot exceed 12']
         },
         minutes: {
             type: Number,
