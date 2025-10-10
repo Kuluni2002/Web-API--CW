@@ -24,13 +24,31 @@ const recordLocation = async (req, res) => {
             });
         }
 
+         const tripData = await Trip.findById(trip)
+            .populate('bus', 'operator');
+
+        if (!tripData) {
+            return res.status(404).json({
+                success: false,
+                message: 'Trip not found'
+            });
+        }
+
+        // Check if the bus belongs to the current operator
+        if (tripData.bus.operator.toString() !== req.user.operatorId.toString()) {
+            return res.status(403).json({
+                success: false,
+                message: 'Access denied: You can only record locations for your own buses'
+            });
+        }
+
+
         const location = await Location.create({
             trip,
             coordinates: {
                 latitude,
                 longitude
             },
-            speed,
             heading,
             accuracy,
             timestamp: new Date()
@@ -183,11 +201,61 @@ const deleteLocationHistory = async (req, res) => {
     }
 };
 
+const getBusLocationOnRoute = async (req, res) => {
+    try {
+        const { busId, routeId } = req.params;
+
+        // Find active trip for specific bus on specific route
+        const trip = await Trip.findOne({
+            bus: busId,
+            route: routeId,
+            status: 'in-progress'
+        })
+        .populate('bus', 'busNumber registrationNumber')
+        .populate('route', 'name routeNumber startLocation endLocation');
+
+        if (!trip) {
+            return res.status(404).json({
+                success: false,
+                message: 'No active trip found for this bus on this route'
+            });
+        }
+
+        // Get latest location for this trip
+        const latestLocation = await Location.findOne({ trip: trip._id })
+            .sort({ timestamp: -1 });
+
+        res.status(200).json({
+            success: true,
+            data: {
+                trip: {
+                    id: trip._id,
+                    tripNumber: trip.tripNumber,
+                    bus: trip.bus,
+                    route: trip.route,
+                    scheduledDeparture: trip.scheduledDeparture,
+                    scheduledArrival: trip.scheduledArrival,
+                    status: trip.status
+                },
+                location: latestLocation || null,
+                lastUpdated: latestLocation?.timestamp || null
+            }
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Error fetching bus location on route',
+            error: error.message
+        });
+    }
+};
+
 // Export all functions
 module.exports = {
     recordLocation,
     getLocationHistory,
     getLatestLocation,
     getLiveLocations,
-    deleteLocationHistory
+    deleteLocationHistory,
+    getBusLocationOnRoute
 };

@@ -21,7 +21,7 @@ const { protect, authorize } = require('../middleware/auth');
 
 // All routes use protect middleware
 // POST / uses authorize with operator role, calls createTrip
-router.post('/', protect, authorize('operator'), createTrip);
+router.post('/', protect, authorize('admin'), createTrip);
 
 // GET / calls getAllTrips (accessible to all authenticated users)
 router.get('/', protect, getAllTrips);
@@ -39,13 +39,13 @@ router.get('/bus/:busId', protect, getTripsByBus);
 router.get('/:id', protect, getTripById);
 
 // PUT /:id uses authorize with operator, calls updateTrip
-router.put('/:id', protect, authorize('operator'), updateTrip);
+router.put('/:id', protect, authorize('admin'), updateTrip);
 
 // PUT /:id/status uses authorize with operator, calls updateTripStatus
 router.put('/:id/status', protect, authorize('operator'), updateTripStatus);
 
 // DELETE /:id uses authorize with operator, calls deleteTrip
-router.delete('/:id', protect, authorize('operator'), deleteTrip);
+router.delete('/:id', protect, authorize('admin'), deleteTrip);
 
 // Export router
 module.exports = router;

@@ -5,7 +5,7 @@ const Route = require('../models/route');
 // Function createRoute: async function with req and res, extracts routeNumber, name, origin, destination, distance, estimatedDuration, stops from req.body, creates route using Route.create, returns 201 with success and route data, use try-catch with 500 status
 const createRoute = async (req, res) => {
     try {
-        const { routeNumber, name, startLocation, endLocation, distance, estimatedDuration, stops } = req.body;
+        const { routeNumber, name, startLocation, endLocation, distance, estimatedDuration,operatorId, stops } = req.body;
         
         const route = await Route.create({
             routeNumber,
@@ -14,16 +14,38 @@ const createRoute = async (req, res) => {
             endLocation,
             distance,
             estimatedDuration,
+            operatorId, 
             stops
         });
 
         res.status(201).json({
             success: true,
+            message: 'Route created successfully',
             data: {
                 route
             }
         });
     } catch (error) {
+
+        console.error('Create route error:', error);
+        
+        // Handle duplicate route number
+        if (error.code === 11000) {
+            return res.status(409).json({
+                success: false,
+                message: 'Route with this route number already exists'
+            });
+        }
+        
+        // Handle validation errors
+        if (error.name === 'ValidationError') {
+            return res.status(400).json({
+                success: false,
+                message: 'Validation failed',
+                error: error.message
+            });
+        }
+
         res.status(500).json({
             success: false,
             message: 'Server error',
@@ -35,7 +57,7 @@ const createRoute = async (req, res) => {
 // Function getAllRoutes: async function with req and res, extracts query params origin and destination for filtering, builds filter object checking isActive true, if origin provided add to filter, if destination provided add to filter, finds routes using Route.find with filter, sorts by routeNumber ascending, returns 200 with success, count, and routes array, use try-catch
 const getAllRoutes = async (req, res) => {
     try {
-        const { origin, destination } = req.query;
+        const { origin, destination, operatorId, status } = req.query;
         
         // Build filter object
         const filter = {};
@@ -48,7 +70,18 @@ const getAllRoutes = async (req, res) => {
             filter.endLocation = { $regex: destination, $options: 'i' };
         }
 
-        const routes = await Route.find(filter).sort({ routeNumber: 1 });
+         if (operatorId) {
+            filter.operatorId = operatorId;
+        }
+        
+        if (status) {
+            filter.status = status;
+        }
+
+        const routes = await Route.find(filter)
+        .populate('operatorId', 'name permitNumber contactNumber')
+        .populate('stops.locationId', 'name coordinates type address')
+        .sort({ routeNumber: 1 });
 
         res.status(200).json({
             success: true,
@@ -71,7 +104,10 @@ const getRouteById = async (req, res) => {
     try {
         const { id } = req.params;
         
-        const route = await Route.findById(id);
+        const route = await Route.findById(id)
+        .populate('operatorId', 'name permitNumber contactNumber')
+        .populate('stops.locationId', 'name coordinates type address')
+        ;
 
         if (!route) {
             return res.status(404).json({
@@ -89,7 +125,7 @@ const getRouteById = async (req, res) => {
     } catch (error) {
         res.status(500).json({
             success: false,
-            message: 'Server error',
+            message: 'Error fetching route',
             error: error.message
         });
     }
@@ -118,6 +154,7 @@ const updateRoute = async (req, res) => {
 
         res.status(200).json({
             success: true,
+            message: 'Route updated successfully',
             data: {
                 route
             }
@@ -125,7 +162,7 @@ const updateRoute = async (req, res) => {
     } catch (error) {
         res.status(500).json({
             success: false,
-            message: 'Server error',
+            message: 'Error updating route',
             error: error.message
         });
     }
@@ -136,7 +173,11 @@ const deleteRoute = async (req, res) => {
     try {
         const { id } = req.params;
         
-        const route = await Route.findByIdAndDelete(id);
+        const route = await Route.findByIdAndDelete(
+            id,
+            { status: 'inactive' },
+            { new: true }
+        );
 
         if (!route) {
             return res.status(404).json({
@@ -152,7 +193,7 @@ const deleteRoute = async (req, res) => {
     } catch (error) {
         res.status(500).json({
             success: false,
-            message: 'Server error',
+            message: 'Error deleting route',
             error: error.message
         });
     }
