@@ -49,6 +49,7 @@ const recordLocation = async (req, res) => {
                 latitude,
                 longitude
             },
+            speed,
             heading,
             accuracy,
             timestamp: new Date()
