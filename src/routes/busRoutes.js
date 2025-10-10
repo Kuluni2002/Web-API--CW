@@ -17,8 +17,8 @@ const {
 const { protect, authorize } = require('../middleware/auth');
 
 // All routes use protect middleware
-// POST / uses authorize with admin and operator roles, calls createBus
-router.post('/', protect, authorize('admin', 'operator'), createBus);
+// POST / uses authorize with admin roles, calls createBus
+router.post('/', protect, authorize('admin'), createBus);
 
 // GET / calls getAllBuses
 router.get('/', protect, getAllBuses);
@@ -29,8 +29,8 @@ router.get('/operator/:operatorId', protect, getBusesByOperator);
 // GET /:id calls getBusById
 router.get('/:id', protect, getBusById);
 
-// PUT /:id uses authorize with admin and operator, calls updateBus
-router.put('/:id', protect, authorize('admin', 'operator'), updateBus);
+// PUT /:id uses authorize with admin roles, calls updateBus
+router.put('/:id', protect, authorize('admin'), updateBus);
 
 // DELETE /:id uses authorize with admin, calls deleteBus
 router.delete('/:id', protect, authorize('admin'), deleteBus);
