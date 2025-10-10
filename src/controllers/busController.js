@@ -7,22 +7,44 @@ const Route = require('../models/route');
 // Function createBus: async, extracts busNumber, registrationNumber, operator, route, capacity, type, status from req.body, creates bus using Bus.create, returns 201 with bus data, use try-catch
 const createBus = async (req, res) => {
     try {
-        const { registrationNumber, operator, route, type } = req.body;
+        const { registrationNumber, operator, route, type, status } = req.body;
         
-        const bus = await Bus.create({
-            registrationNumber,
-            operator,
-            route,
-            type
+        const bus = await Bus.create({         
+            registrationNumber, 
+            operator,           
+            route,                       
+            type,            
+            status 
         });
 
         res.status(201).json({
             success: true,
+            message: 'Bus created successfully',
             data: {
                 bus
             }
         });
     } catch (error) {
+
+        console.error('Create bus error:', error);  // ✅ ADDED LOGGING
+        
+        // Handle duplicate registration number
+        if (error.code === 11000) {
+            return res.status(409).json({
+                success: false,
+                message: 'Bus with this registration number already exists'
+            });
+        }
+        
+        // Handle validation errors
+        if (error.name === 'ValidationError') {
+            return res.status(400).json({
+                success: false,
+                message: 'Validation failed',
+                error: error.message
+            });
+        }
+
         res.status(500).json({
             success: false,
             message: 'Server error',
@@ -34,7 +56,7 @@ const createBus = async (req, res) => {
 // Function getAllBuses: async, extracts query params operator, route, status for filtering, builds filter object, finds buses using Bus.find with filter, populates operator and route fields with select for name fields only, sorts by busNumber, returns 200 with count and buses array, use try-catch
 const getAllBuses = async (req, res) => {
     try {
-        const { operator, route, type } = req.query;
+        const { operator, route, type, status } = req.query;
         
         // Build filter object
         const filter = {};
@@ -51,10 +73,14 @@ const getAllBuses = async (req, res) => {
             filter.type = type;
         }
 
+         if (status) {  
+            filter.status = status;
+        }
+
         const buses = await Bus.find(filter)
-            .populate('operator', 'name')
-            .populate('route', 'name')
-            .sort({ registrationNumber: 1 });
+            .populate('operator', 'name permitNumber')
+            //.populate('route', 'name')
+            .sort({route: 1, registrationNumber: 1 });
 
         res.status(200).json({
             success: true,
@@ -66,7 +92,7 @@ const getAllBuses = async (req, res) => {
     } catch (error) {
         res.status(500).json({
             success: false,
-            message: 'Server error',
+            message: 'Error Fetching Buses',
             error: error.message
         });
     }
@@ -171,8 +197,9 @@ const getBusesByOperator = async (req, res) => {
     try {
         const { operatorId } = req.params;
         
-        const buses = await Bus.find({ operator: operatorId })
-            .populate('route');
+        const buses = await Bus.find({ operator: operatorId, status: 'active' })
+            //.populate('route');
+            .sort({ route: 1, registrationNumber: 1 });
 
         res.status(200).json({
             success: true,
