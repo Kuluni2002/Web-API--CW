@@ -14,11 +14,8 @@ const busSchema = new mongoose.Schema({
         ref: 'Operator',
         required: [true, 'Operator is required']
     },
-    route: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Route',
-        required: [true, 'Route is required']
-    },
+    // 
+    routeNumber: { type: String, required: true }, 
     type: {
         type: String,
         required: [true, 'Bus type is required'],

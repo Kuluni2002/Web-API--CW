@@ -7,12 +7,12 @@ const Route = require('../models/route');
 // Function createBus: async, extracts busNumber, registrationNumber, operator, route, capacity, type, status from req.body, creates bus using Bus.create, returns 201 with bus data, use try-catch
 const createBus = async (req, res) => {
     try {
-        const { registrationNumber, operator, route, type, status } = req.body;
+        const { registrationNumber, operator, routeNumber, type, status } = req.body;
         
         const bus = await Bus.create({         
             registrationNumber, 
             operator,           
-            route,                       
+            routeNumber,                       
             type,            
             status 
         });
@@ -56,7 +56,7 @@ const createBus = async (req, res) => {
 // Function getAllBuses: async, extracts query params operator, route, status for filtering, builds filter object, finds buses using Bus.find with filter, populates operator and route fields with select for name fields only, sorts by busNumber, returns 200 with count and buses array, use try-catch
 const getAllBuses = async (req, res) => {
     try {
-        const { operator, route, type, status } = req.query;
+        const { operator, routeNumber, type, status, search } = req.query;
         
         // Build filter object
         const filter = {};
@@ -65,8 +65,8 @@ const getAllBuses = async (req, res) => {
             filter.operator = operator;
         }
         
-        if (route) {
-            filter.route = route;
+        if (routeNumber) {
+            filter.routeNumber = routeNumber;
         }
         
         if (type) {
@@ -77,10 +77,17 @@ const getAllBuses = async (req, res) => {
             filter.status = status;
         }
 
+          if (search) {
+            filter.registrationNumber = {
+                $regex: search,
+                $options: 'i' 
+            };
+        }
+
         const buses = await Bus.find(filter)
             .populate('operator', 'name permitNumber')
             //.populate('route', 'name')
-            .sort({route: 1, registrationNumber: 1 });
+            .sort({routeNumber: 1, registrationNumber: 1 });
 
         res.status(200).json({
             success: true,
@@ -105,7 +112,8 @@ const getBusById = async (req, res) => {
         
         const bus = await Bus.findById(id)
             .populate('operator')
-            .populate('route');
+            //.populate('route');
+            .populate('routeNumber');
 
         if (!bus) {
             return res.status(404).json({
@@ -141,7 +149,7 @@ const updateBus = async (req, res) => {
                 new: true,
                 runValidators: true
             }
-        ).populate('operator').populate('route');
+        ).populate('operator').populate('routeNumber');
 
         if (!bus) {
             return res.status(404).json({
@@ -199,7 +207,7 @@ const getBusesByOperator = async (req, res) => {
         
         const buses = await Bus.find({ operator: operatorId, status: 'active' })
             //.populate('route');
-            .sort({ route: 1, registrationNumber: 1 });
+            .sort({ routeNumber: 1, registrationNumber: 1 });
 
         res.status(200).json({
             success: true,
