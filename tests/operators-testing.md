@@ -3,7 +3,7 @@ Operators Management - Test Report
 
 Project: NTC Bus Tracking API
 Feature: Operators Management 
-Date: 2025-10-07
+Date: 2025-10-12
 Branch: testing
 
 
@@ -21,9 +21,14 @@ API Testing: Postman
 Server: Node.js + Express.js
 Database: MongoDB with Mongoose
 
+Prerequisites:
+
+Admin token from authentication tests
+Commuter token from authentication tests
+
 Test Endpoints:
 
-POST /api/operators - Create operator (admin, operator)
+POST /api/operators - Create operator (admin)
 GET /api/operators - Get all operators (authenticated)
 GET /api/operators/:id - Get operator by ID (authenticated)
 PUT /api/operators/:id - Update operator (admin only)
@@ -47,7 +52,7 @@ Request Body:
   "name": "D.S.GUNASEKARA PASSENGER TRANSPORT SERVICE (PVT)LTD",
   "contactNumber": "0712345678",
   "email": "dsgunasekara@ntc.lk",
-  "permitNumber": "F13855"
+  "password": "dsgunasekara@123"
 }
 
 Expected Response:
@@ -60,14 +65,10 @@ json{
     "success": true,
     "data": {
         "operator": {
+            "id": "68ebccc4400e0ff356b7a3a1",
             "name": "D.S.GUNASEKARA PASSENGER TRANSPORT SERVICE (PVT)LTD",
-            "contactNumber": "0712345678",
             "email": "dsgunasekara@ntc.lk",
-            "permitNumber": "F13855",
-            "_id": "68e40e7c493aa86101ad2b59",
-            "createdAt": "2025-10-06T18:46:20.537Z",
-            "updatedAt": "2025-10-06T18:46:20.537Z",
-            "__v": 0
+            "createdAt": "2025-10-12T15:44:04.259Z"
         }
     }
 }
@@ -98,17 +99,25 @@ Sorted by name ascending
 Actual Response:
 json{
     "success": true,
-    "count": 1,
+    "count": 2,
     "data": {
         "operators": [
             {
-                "_id": "68e40e7c493aa86101ad2b59",
+                "_id": "68ebe6e50af5ef00eeaffb03",
+                "name": "ABC Transport Services Limited",
+                "contactNumber": "0771234567",
+                "email": "abc@transport.lk",
+                "createdAt": "2025-10-12T17:35:33.523Z",
+                "updatedAt": "2025-10-12T17:35:33.523Z",
+                "__v": 0
+            },
+            {
+                "_id": "68ebccc4400e0ff356b7a3a1",
                 "name": "D.S.GUNASEKARA PASSENGER TRANSPORT SERVICE (PVT)LTD",
                 "contactNumber": "0712345678",
                 "email": "dsgunasekara@ntc.lk",
-                "permitNumber": "F13855",
-                "createdAt": "2025-10-06T18:46:20.537Z",
-                "updatedAt": "2025-10-06T18:46:20.537Z",
+                "createdAt": "2025-10-12T15:44:04.259Z",
+                "updatedAt": "2025-10-12T15:44:04.259Z",
                 "__v": 0
             }
         ]
@@ -133,7 +142,7 @@ Endpoint: GET /api/operators/:id
 Request Headers:
 Authorization: Bearer [token]
 
-URL: GET /api/operators/c
+URL: GET /api/operators/68ebccc4400e0ff356b7a3a1
 
 Expected Response:
 Status Code: 200 OK
@@ -144,13 +153,12 @@ json{
     "success": true,
     "data": {
         "operator": {
-            "_id": "68e40e7c493aa86101ad2b59",
+            "_id": "68ebccc4400e0ff356b7a3a1",
             "name": "D.S.GUNASEKARA PASSENGER TRANSPORT SERVICE (PVT)LTD",
             "contactNumber": "0712345678",
             "email": "dsgunasekara@ntc.lk",
-            "permitNumber": "F13855",
-            "createdAt": "2025-10-06T18:46:20.537Z",
-            "updatedAt": "2025-10-06T18:46:20.537Z",
+            "createdAt": "2025-10-12T15:44:04.259Z",
+            "updatedAt": "2025-10-12T15:44:04.259Z",
             "__v": 0
         }
     }
@@ -191,13 +199,12 @@ json{
     "success": true,
     "data": {
         "operator": {
-            "_id": "68e40e7c493aa86101ad2b59",
+            "_id": "68ebccc4400e0ff356b7a3a1",
             "name": "D.S.GUNASEKARA PASSENGER TRANSPORT SERVICE (PVT)LTD",
             "contactNumber": "0719876543",
             "email": "dsgunasekara.updated@ntc.lk",
-            "permitNumber": "F13855",
-            "createdAt": "2025-10-06T18:46:20.537Z",
-            "updatedAt": "2025-10-07T14:28:02.883Z",
+            "createdAt": "2025-10-12T15:44:04.259Z",
+            "updatedAt": "2025-10-12T18:21:23.632Z",
             "__v": 0
         }
     }
@@ -243,10 +250,127 @@ Operator no longer exists in database
 
 Result: PASS
 
+
+
+TC-OP-006: Filter Operators by Name 
+
+Objective: Verify operators can be filtered by name using case-insensitive search  
+Endpoint: GET /api/operators?name=gunasekara  
+
+Request Headers:
+Authorization: Bearer [admin_token]
+
+Expected Response:
+Status Code: 200 OK
+Only operators with names containing "gunasekara" (case-insensitive)
+
+Actual Response:
+json
+{
+    "success": true,
+    "count": 1,
+    "data": {
+        "operators": [
+            {
+                "_id": "68ebccc4400e0ff356b7a3a1",
+                "name": "D.S.GUNASEKARA PASSENGER TRANSPORT SERVICE (PVT)LTD",
+                "contactNumber": "0719876543",
+                "email": "dsgunasekara.updated@ntc.lk",
+                "createdAt": "2025-10-12T15:44:04.259Z",
+                "updatedAt": "2025-10-12T18:21:23.632Z",
+                "__v": 0
+            }
+        ]
+    }
+}
+
+
+Status Code: 200  
+
+Result: PASS
+
+
+
+TC-OP-007: Combined Filters - Name and Email
+
+Objective: Verify multiple filters can be applied simultaneously  
+Endpoint: GET /api/operators?name=transport&email=ntc.lk  
+
+Request Headers:
+Authorization: Bearer [admin_token]
+
+Expected Response:
+Status Code: 200 OK
+Operators matching BOTH name containing "transport" AND email containing "ntc.lk"
+
+Actual Response:
+json
+{
+    "success": true,
+    "count": 1,
+    "data": {
+        "operators": [
+            {
+                "_id": "68ebccc4400e0ff356b7a3a1",
+                "name": "D.S.GUNASEKARA PASSENGER TRANSPORT SERVICE (PVT)LTD",
+                "contactNumber": "0719876543",
+                "email": "dsgunasekara.updated@ntc.lk",
+                "createdAt": "2025-10-12T15:44:04.259Z",
+                "updatedAt": "2025-10-12T18:21:23.632Z",
+                "__v": 0
+            }
+        ]
+    }
+}
+
+Status Code: 200  
+
+Result: PASS
+
+
+
+TC-OP-008: Partial Text Search - Multiple Fields
+
+Objective: Verify partial text search across multiple fields  
+Endpoint: GET /api/operators?search=gunasekara  
+
+Request Headers:
+Authorization: Bearer [admin_token]
+
+Expected Response:
+Status Code: 200 OK
+Operators with "gunasekara" in name or email
+
+Actual Response:
+json
+{
+    "success": true,
+    "count": 1,
+    "data": {
+        "operators": [
+            {
+                "_id": "68ebccc4400e0ff356b7a3a1",
+                "name": "D.S.GUNASEKARA PASSENGER TRANSPORT SERVICE (PVT)LTD",
+                "contactNumber": "0719876543",
+                "email": "dsgunasekara.updated@ntc.lk",
+                "createdAt": "2025-10-12T15:44:04.259Z",
+                "updatedAt": "2025-10-12T18:21:23.632Z",
+                "__v": 0
+            }
+        ]
+    }
+}
+
+Status Code:200  
+
+Result: PASS
+
+
+
 Negative Test Cases
 
 
-TC-OP-006: Create Operator Without Authentication
+TC-OP-009: Create Operator Without Authentication
 
 Objective: Verify that operator creation requires authentication  
 Endpoint: POST /api/operators  
@@ -262,9 +386,8 @@ json
   "name": "D.S.GUNASEKARA PASSENGER TRANSPORT SERVICE (PVT)LTD",
   "contactNumber": "0712345678",
   "email": "dsgunasekara@ntc.lk",
-  "permitNumber": " F13854"
+  "password": "dsgunasekara@123"
 }
-
 
 Expected Response:
 Status Code: 401 Unauthorized
@@ -290,7 +413,46 @@ Result: PASS (Correctly blocks unauthorized access)
 
 
 
-TC-OP-007: Create Operator With Missing Required Fields
+
+TC-OP-010: Create Operator Without Admin Permission
+
+Objective: Verify only admin can create operators  
+Endpoint: POST /api/operators  
+
+Request Headers:
+Authorization: Bearer [commuter_token]
+Content-Type: application/json
+
+
+Request Body:
+json
+{
+  "name": "Test Operator",
+  "contactNumber": "0112345678",
+  "email": "test@operator.lk",
+  "password": "test123456"
+}
+
+
+Expected Response:
+Status Code: 403 Forbidden
+Error message indicating insufficient permissions
+
+Actual Response:
+json
+{
+    "success": false,
+    "message": "User role 'commuter' is not authorized to access this resource"
+}
+
+
+Status Code: 403  
+
+Result: PASS
+
+
+
+TC-OP-011: Create Operator With Missing Required Fields
 
 Objective: Verify required field validation
 Endpoint: POST /api/operators
@@ -301,9 +463,9 @@ Authorization: Bearer [Admin_token]
 
 Request Body:
 json{
-  "name": "D.S.GUNASEKARA PASSENGER TRANSPORT SERVICE (PVT)LTD"
+  "name": "MALLIKA PASSENGER TRANSPORT SERVICE (PVT)LTD"
 }
-(Missing contactNumber, email, permitNumber)
+(Missing contactNumber, email, password)
 
 Expected Response:
 Status Code: 500
@@ -312,8 +474,8 @@ Validation error for missing fields
 Actual Response:
 json{
     "success": false,
-    "message": "Server error",
-    "error": "Operator validation failed: contactNumber: Contact number is required, email: Email is required, permitNumber: Permit number is required"
+    "message": "Validation failed",
+    "error": "Operator validation failed: contactNumber: Contact number is required, email: Email is required, password: Password is required"
 }
 
 Status Code: 500 
@@ -322,9 +484,9 @@ Result: PASS
 
 
 
-TC-OP-008: Create Operator With Duplicate Permit Number
+TC-OP-012: Create Operator With Duplicate Name
 
-Objective: Verify that duplicate permit numbers are prevented  
+Objective: Verify that duplicate names are prevented  
 Endpoint POST /api/operators  
 
 Request Headers:
@@ -336,37 +498,37 @@ Request Body:
 json
 {
   "name": "D.S.GUNASEKARA PASSENGER TRANSPORT SERVICE (PVT)LTD",
-  "contactNumber": "0712345678",
-  "email": "dsgunasekara@ntc.lk",
-  "permitNumber": " F13855"
+  "contactNumber": "0716345678",
+  "email": "duplicateopertor@ntc.lk",
+  "password": " duplicateoperator@123"
 }
 
 
 Expected Response:
 Status Code: 409 Conflict
-Error message indicating duplicate permit number
+Error message indicating duplicate name
 
 Actual Response:
 json
 {
-  "success": false,
-  "message": "Operator with this permit number already exists"
+    "success": false,
+    "message": "Operator with similar details already exists"
 }
 
 
 Status Code: 400
 
 Verification:
-Duplicate permit number prevented
+Duplicate name prevented
 Appropriate error message
 No duplicate operator created
 
-Result:PASS (Correctly prevents duplicate permit numbers)
+Result:PASS (Correctly prevents duplicate names)
 
 
 
 
-TC-OP-009: TC-019: Get Operator With Non-Existent ID
+TC-OP-013: Get Operator With Non-Existent ID
 
 Objective: Verify handling of valid but non-existent ID
 Endpoint: GET /api/operators/679aaaaabbbbccccddddeeee
@@ -396,7 +558,7 @@ Result: PASS
 
 
 
-TC-OP-010: Update Non-Existent Operator
+TC-OP-014: Update Non-Existent Operator
 
 Objective: Verify that updating non-existent operator fails gracefully  
 Endpoint: PUT /api/operators/677999999999999999999999  
@@ -432,3 +594,11 @@ No unexpected errors
 
 Result: PASS 
 
+
+
+Test Summary
+
+Total Test Cases: 14 
+Passed: 14  
+Failed: 0  
+Pass Rate: 100%
