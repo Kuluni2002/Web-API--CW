@@ -2,6 +2,7 @@
 // Import User model from ../models/User and jsonwebtoken
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
+const Operator = require('../models/operator');
 
 // Function generateToken: accepts userId, returns JWT signed with process.env.JWT_SECRET, expires in 7 days
 const generateToken = (userId) => {
@@ -118,6 +119,96 @@ const login = async (req, res) => {
     }
 };
 
+const operatorLogin = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        console.log('=== LOGIN DEBUG ===');
+        console.log('Login attempt with:', { email, password });
+
+        if (!email || !password) {
+            return res.status(400).json({
+                success: false,
+                message: 'Please provide email and password'
+            });
+        }
+
+        // Find operator with password
+        const operator = await Operator.findOne({ email }).select('+password');
+        
+        console.log('Found operator:', operator ? 'YES' : 'NO');
+        
+        if (!operator) {
+            console.log('Operator not found in database');
+            return res.status(401).json({
+                success: false,
+                message: 'Invalid credentials - operator not found'
+            });
+        }
+
+        console.log('Operator found:', {
+            name: operator.name,
+            email: operator.email,
+            status: operator.status,
+            hasPassword: !!operator.password,
+            passwordLength: operator.password ? operator.password.length : 0
+        });
+
+        // Check if matchPassword method exists
+        console.log('matchPassword method exists:', typeof operator.matchPassword === 'function');
+
+        // Check password
+        console.log('Attempting password comparison...');
+        console.log('Entered password:', password);
+        console.log('Stored password hash (first 20 chars):', operator.password ? operator.password.substring(0, 20) + '...' : 'NO PASSWORD');
+        
+        const isMatch = await operator.matchPassword(password);
+        console.log('Password match result:', isMatch);
+
+        if (!isMatch) {
+            console.log('Password mismatch - login failed');
+            return res.status(401).json({
+                success: false,
+                message: 'Invalid credentials - password mismatch'
+            });
+        }
+
+        // if (operator.status !== 'active') {
+        //     console.log('Operator account not active:', operator.status);
+        //     return res.status(401).json({
+        //         success: false,
+        //         message: 'Operator account is not active'
+        //     });
+        // }
+
+        console.log('Login successful, generating token...');
+        const token = operator.getSignedJwtToken();
+
+        res.status(200).json({
+            success: true,
+            message: 'Operator logged in successfully',
+            token,
+            data: {
+                operator: {
+                    id: operator._id,
+                    name: operator.name,
+                    email: operator.email,
+                    permitNumber: operator.permitNumber,
+                    role: 'operator'
+                }
+            }
+        });
+
+    } catch (error) {
+        console.error('Login error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Login failed',
+            error: error.message
+        });
+    }
+};
+
 // Function getMe: async function, accepts req and res, finds user by req.user.id using findById and select('-password') to exclude password, returns 200 with success true and user data, use try-catch with 500 status
 const getMe = async (req, res) => {
     try {
@@ -142,5 +233,6 @@ const getMe = async (req, res) => {
 module.exports = {
     register,
     login,
-    getMe
+    getMe,
+    operatorLogin
 };

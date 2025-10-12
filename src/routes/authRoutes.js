@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 // Import register, login, getMe from ../controllers/authController
-const { register, login, getMe } = require('../controllers/authController');
+const { register, login, getMe, operatorLogin } = require('../controllers/authController');
 
 // Import protect middleware from ../middleware/auth
 const { protect } = require('../middleware/auth');
@@ -18,5 +18,6 @@ router.post('/login', login);
 // Define GET route /me that uses protect middleware and calls getMe controller
 router.get('/me', protect, getMe);
 
+router.post('/operator/login', operatorLogin);
 // Export router as default
 module.exports = router;

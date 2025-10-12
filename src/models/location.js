@@ -7,28 +7,40 @@ const locationSchema = new mongoose.Schema({
         required: [true, 'Trip reference is required'],
         //index: true
     },
-    latitude: {
-        type: Number,
-        required: [true, 'Latitude is required'],
-        min: [-90, 'Latitude must be between -90 and 90 degrees'],
-        max: [90, 'Latitude must be between -90 and 90 degrees']
+     // Current actual stop name where bus is located
+    stopName: {
+        type: String,
+        required: [true, 'Stop name is required'],
+        trim: true,
+        maxlength: [100, 'Stop name cannot exceed 100 characters']
     },
-    longitude: {
-        type: Number,
-        required: [true, 'Longitude is required'],
-        min: [-180, 'Longitude must be between -180 and 180 degrees'],
-        max: [180, 'Longitude must be between -180 and 180 degrees']
+    
+    // When bus actually arrived at this stop
+    actualArrival: {
+        type: Date,
+        default: Date.now,
+        required: [true, 'Actual arrival time is required']
     },
-    heading: {
-        type: Number,
-        min: [0, 'Heading must be between 0 and 360 degrees'],
-        max: [360, 'Heading must be between 0 and 360 degrees']
+    
+    // When bus actually departed from this stop (optional)
+    actualDeparture: {
+        type: Date
     },
-    accuracy: {
-        type: Number,
-        default: 0,
-        min: [0, 'Accuracy cannot be negative']
+    
+    // Optional notes from operator
+    notes: {
+        type: String,
+        trim: true,
+        maxlength: [200, 'Notes cannot exceed 200 characters']
     },
+    
+    // Status of the bus at this location
+    status: {
+        type: String,
+        enum: ['arrived', 'departed', 'stopped'],
+        default: 'arrived'
+    },
+    
     timestamp: {
         type: Date,
         default: Date.now,
@@ -39,65 +51,35 @@ const locationSchema = new mongoose.Schema({
 });
 
 // Indexes for efficient queries
-locationSchema.index({ trip: 1 });
-locationSchema.index({ timestamp: 1 });
+locationSchema.index({ trip: 1, timestamp: -1 });
+locationSchema.index({ timestamp: -1 });
+locationSchema.index({ trip: 1, stopName: 1 });
 
-// Compound index for time-series queries
-locationSchema.index({ trip: 1, timestamp: 1 });
 
-// Index for geospatial queries
-locationSchema.index({ latitude: 1, longitude: 1 });
-
-// Virtual for coordinates array (useful for mapping libraries)
-locationSchema.virtual('coordinates').get(function() {
-    return [this.longitude, this.latitude];
+// Virtual for time ago
+locationSchema.virtual('timeAgo').get(function() {
+    const now = new Date();
+    const diffMs = now - this.timestamp;
+    const diffMinutes = Math.floor(diffMs / 60000);
+    
+    if (diffMinutes < 1) return 'Just now';
+    if (diffMinutes === 1) return '1 minute ago';
+    if (diffMinutes < 60) return `${diffMinutes} minutes ago`;
+    
+    const diffHours = Math.floor(diffMinutes / 60);
+    if (diffHours === 1) return '1 hour ago';
+    return `${diffHours} hours ago`;
 });
 
-// Virtual for GeoJSON point format
-locationSchema.virtual('geoLocation').get(function() {
-    return {
-        type: 'Point',
-        coordinates: [this.longitude, this.latitude]
-    };
+// Virtual for checking if location is recent
+locationSchema.virtual('isRecent').get(function() {
+    const now = new Date();
+    const ageMs = now - this.timestamp;
+    const ageMinutes = ageMs / 60000;
+    return ageMinutes <= 15; // Consider recent if within 15 minutes
 });
 
-// Static method to get latest location for a trip
-locationSchema.statics.getLatestLocation = function(tripId) {
-    return this.findOne({ trip: tripId })
-        .sort({ timestamp: -1 })
-        .populate('trip');
-};
-
-// Static method to get location history for a trip
-locationSchema.statics.getLocationHistory = function(tripId, limit = 100) {
-    return this.find({ trip: tripId })
-        .sort({ timestamp: -1 })
-        .limit(limit)
-        .populate('trip');
-};
-
-// Static method to get locations within a time range
-locationSchema.statics.getLocationsByTimeRange = function(tripId, startTime, endTime) {
-    return this.find({
-        trip: tripId,
-        timestamp: {
-            $gte: startTime,
-            $lte: endTime
-        }
-    }).sort({ timestamp: 1 });
-};
-
-// Instance method to calculate distance from another location
-locationSchema.methods.distanceTo = function(otherLocation) {
-    const R = 6371; // Earth's radius in kilometers
-    const dLat = (otherLocation.latitude - this.latitude) * Math.PI / 180;
-    const dLon = (otherLocation.longitude - this.longitude) * Math.PI / 180;
-    const a = 
-        Math.sin(dLat/2) * Math.sin(dLat/2) +
-        Math.cos(this.latitude * Math.PI / 180) * Math.cos(otherLocation.latitude * Math.PI / 180) * 
-        Math.sin(dLon/2) * Math.sin(dLon/2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    return R * c; // Distance in kilometers
-};
+locationSchema.set('toJSON', { virtuals: true });
+locationSchema.set('toObject', { virtuals: true });
 
 module.exports = mongoose.model('Location', locationSchema);

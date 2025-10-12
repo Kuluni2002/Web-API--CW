@@ -1,35 +1,47 @@
 // Operator controller for NTC Bus API - manages bus company operations
 // Import Operator model from ../models/Operator
+
+
 const Operator = require('../models/operator');
 
 // Function createOperator: async function with req and res, extracts name, contactNumber, email, permitNumber from req.body, creates new operator using Operator.create, returns 201 with success true and operator data, use try-catch with 500 status for errors
 const createOperator = async (req, res) => {
     try {
-        const { name, contactNumber, email, permitNumber } = req.body;
+        const { name, contactNumber, email, password } = req.body;
         
         const operator = await Operator.create({
             name,
             contactNumber,
             email,
-            permitNumber
+            password
         });
+
+        // Return operator without password
+        const operatorData = {
+            id: operator._id,
+            name: operator.name,
+            email: operator.email,
+            phone: operator.phone,
+            status: operator.status,
+            createdAt: operator.createdAt
+        };
 
         res.status(201).json({
             success: true,
             data: {
-                operator
+                operator: operatorData
             }
         });
     } catch (error) {
         console.error('Create operator error:', error);
-        
-        // Handle MongoDB duplicate key error (E11000)
+
+        // Handle Mongoose duplicate key error (E11000)
         if (error.code === 11000) {
             // Check which field caused the duplicate
-            if (error.keyPattern?.permitNumber) {
+            if (error.keyPattern?.email) {
                 return res.status(409).json({
                     success: false,
-                    message: 'Operator with this permit number already exists'
+                    message: 'Operator with this email already exists'
                 });
             }
             // Generic duplicate message if field isn't clear
@@ -38,7 +50,7 @@ const createOperator = async (req, res) => {
                 message: 'Duplicate entry detected'
             });
         }
-        
+
         // Handle Mongoose validation errors
         if (error.name === 'ValidationError') {
             return res.status(400).json({

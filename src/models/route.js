@@ -1,5 +1,45 @@
 const mongoose = require('mongoose');
 
+// Schema for individual stops on a route
+const stopSchema = new mongoose.Schema({
+    locationName: {
+        type: String,
+        required: [true, 'Location name is required'],
+        trim: true,
+        maxlength: [100, 'Location name cannot exceed 100 characters']
+    },
+
+    // Estimated arrival time at this stop
+    estimatedArrivalTime: {
+        type: String, // Format: "HH:MM" (24-hour format)
+        required: [true, 'Estimated arrival time is required'],
+        validate: {
+            validator: function(v) {
+                return /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(v);
+            },
+            message: 'Estimated arrival must be in HH:MM format'
+        }
+    },
+
+    // Estimated departure time from this stop
+    estimatedDepartureTime: {
+        type: String, // Format: "HH:MM" (24-hour format)
+        required: [true, 'Estimated departure time is required'],
+        validate: {
+            validator: function(v) {
+                return /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(v);
+            },
+            message: 'Estimated departure must be in HH:MM format'
+        }
+    },
+
+    // Estimated travel time to next stop (in minutes)
+    travelTimeToNext: {
+        type: Number,
+        min: [0, 'Travel time cannot be negative']
+    }
+}, { _id: false });
+
 const routeSchema = new mongoose.Schema({
     routeNumber: {
         type: String,
@@ -16,25 +56,25 @@ const routeSchema = new mongoose.Schema({
         minlength: [3, 'Route name must be at least 3 characters long'],
         maxlength: [100, 'Route name cannot exceed 100 characters']
     },
-    startLocation: {
+    origin: {
         type: String,
-        required: [true, 'Start location is required'],
+        required: [true, 'Origin location is required'],
         trim: true,
-        minlength: [2, 'Start location must be at least 2 characters long'],
-        maxlength: [100, 'Start location cannot exceed 100 characters']
+        minlength: [2, 'Origin location must be at least 2 characters long'],
+        maxlength: [100, 'Origin location cannot exceed 100 characters']
     },
-    endLocation: {
+    destination: {
         type: String,
-        required: [true, 'End location is required'],
+        required: [true, 'Destination location is required'],
         trim: true,
-        minlength: [2, 'End location must be at least 2 characters long'],
-        maxlength: [100, 'End location cannot exceed 100 characters']
+        minlength: [2, 'Destination location must be at least 2 characters long'],
+        maxlength: [100, 'Destination location cannot exceed 100 characters']
     },
-    distance: {
+    totalDistance: {
         type: Number,
-        required: [true, 'Distance is required'],
-        min: [0.1, 'Distance must be at least 0.1 km'],
-        max: [1000, 'Distance cannot exceed 1000 km']
+        required: [true, 'Total distance is required'],
+        min: [0.1, 'Total distance must be at least 0.1 km'],
+        max: [1000, 'Total distance cannot exceed 1000 km']
     },
     estimatedDuration: {
         hours: {
@@ -57,28 +97,13 @@ const routeSchema = new mongoose.Schema({
         required: [true, 'Operator ID is required']
     },
 
-   stops: [{
-        locationId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Location',
-            required: [true, 'Location ID is required']
-        },
-        order: {
-            type: Number,
-            required: [true, 'Stop order is required'],
-            min: [1, 'Stop order must start from 1']
-        },
-        estimatedArrivalTime: {
-            type: String,
-            validate: {
-                validator: function(v) {
-                    // Validates HH:MM format (24-hour)
-                    return !v || /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(v);
-                },
-                message: 'Arrival time must be in HH:MM format (24-hour)'
-            }
-        }
-    }],
+    stops: [stopSchema],
+
+ // Operating status
+    isActive: {
+        type: Boolean,
+        default: true
+    }
 }, {
     timestamps: true,
 });
@@ -86,9 +111,9 @@ const routeSchema = new mongoose.Schema({
 // Custom validation for the entire document
 routeSchema.pre('validate', function(next) {
     // Ensure start and end locations are different
-    if (this.startLocation && this.endLocation) {
-        if (this.startLocation.toLowerCase() === this.endLocation.toLowerCase()) {
-            this.invalidate('endLocation', 'Start and end locations must be different');
+    if (this.origin && this.destination) {
+        if (this.origin.toLowerCase() === this.destination.toLowerCase()) {
+            this.invalidate('destination', 'Start and end locations must be different');
         }
     }
     
@@ -97,17 +122,20 @@ routeSchema.pre('validate', function(next) {
         this.invalidate('stops', 'Route must have at least 2 stops');
     }
     
-    // Validate stop order sequence
-    if (this.stops && this.stops.length > 1) {
-        const orders = this.stops.map(stop => stop.order).sort((a, b) => a - b);
-        const expectedOrders = Array.from({length: orders.length}, (_, i) => i + 1);
-        
-        if (JSON.stringify(orders) !== JSON.stringify(expectedOrders)) {
-            this.invalidate('stops', 'Stop orders must be sequential starting from 1');
-        }
-    }
     
     next();
+});
+
+// Indexes
+routeSchema.index({ routeNumber: 1 });
+routeSchema.index({ operatorId: 1 });
+routeSchema.index({ origin: 1, destination: 1 });
+routeSchema.index({ isActive: 1 });
+
+
+// Virtual to get total stops count
+routeSchema.virtual('totalStops').get(function() {
+    return this.stops.length;
 });
 
 // Virtual for total minutes
@@ -115,86 +143,42 @@ routeSchema.virtual('totalMinutes').get(function() {
     return (this.estimatedDuration.hours * 60) + this.estimatedDuration.minutes;
 });
 
-// Virtual for formatted duration
+// Virtual to get formatted duration
 routeSchema.virtual('formattedDuration').get(function() {
     const { hours, minutes } = this.estimatedDuration;
-    if (hours > 0) {
-        return `${hours}h ${minutes}m`;
-    }
-    return `${minutes}m`;
+    if (hours === 0) return `${minutes} minutes`;
+    if (minutes === 0) return `${hours} hour${hours > 1 ? 's' : ''}`;
+    return `${hours}h ${minutes}m`;
 });
 
 // Index for efficient queries
 //routeSchema.index({ routeNumber: 1 });
 //routeSchema.index({ isActive: 1 });
 
-// Virtual for stop count
-routeSchema.virtual('stopCount').get(function() {
-    return this.stops ? this.stops.length : 0;
-});
 
-// Instance method to toggle active status
-routeSchema.methods.toggleActive = function() {
-    this.isActive = !this.isActive;
-    return this.save();
-};
-
-// Static method to find active routes
-routeSchema.statics.findActiveRoutes = function() {
-    return this.find({ isActive: true });
-};
-
-// Instance method to add stop
-routeSchema.methods.addStop = function(locationId, order, arrivalTime) {
-    // Check if order already exists
-    const existingStop = this.stops.find(stop => stop.order === order);
-    if (existingStop) {
-        throw new Error(`Stop with order ${order} already exists`);
+// Method to get next stop by array index
+routeSchema.methods.getNextStop = function(currentLocationName) {
+    const currentIndex = this.stops.findIndex(stop => 
+        stop.locationName.toLowerCase().includes(currentLocationName.toLowerCase()) ||
+        currentLocationName.toLowerCase().includes(stop.locationName.toLowerCase())
+    );
+    
+    if (currentIndex !== -1 && currentIndex < this.stops.length - 1) {
+        return this.stops[currentIndex + 1];
     }
     
-    this.stops.push({
-        locationId,
-        order,
-        estimatedArrivalTime: arrivalTime
-    });
-    
-    // Sort stops by order
-    this.stops.sort((a, b) => a.order - b.order);
-    
-    return this.save();
+    return null;
 };
 
-// Static method to find routes by operator
-routeSchema.statics.findByOperator = function(operatorId) {
-    return this.find({ operatorId }).populate('operatorId', 'name permitNumber contactNumber');
+// Method to get stop by location name
+routeSchema.methods.getStopByLocationName = function(locationName) {
+    return this.stops.find(stop => 
+        stop.locationName.toLowerCase().includes(locationName.toLowerCase()) ||
+        locationName.toLowerCase().includes(stop.locationName.toLowerCase())
+    );
 };
 
-// Static method to find routes with stops populated
-routeSchema.statics.findWithPopulatedStops = function(query = {}) {
-    return this.find(query)
-        .populate('operatorId', 'name permitNumber contactNumber')
-        .populate('stops.locationId', 'name coordinates type address')
-        .sort({ routeNumber: 1 });
-};
-
-// Index for efficient queries
-routeSchema.index({ routeNumber: 1 });
-routeSchema.index({ status: 1 });
-routeSchema.index({ operatorId: 1 });
-routeSchema.index({ 'stops.locationId': 1 });
-
-// Compound index for operator and status
-routeSchema.index({ operatorId: 1, status: 1 });
-
-// Transform function to clean up output
-routeSchema.set('toJSON', {
-    virtuals: true,
-    transform: function(doc, ret) {
-        ret.id = ret._id;
-        delete ret._id;
-        delete ret.__v;
-        return ret;
-    }
-});
+routeSchema.set('toJSON', { virtuals: true });
+routeSchema.set('toObject', { virtuals: true });
 
 module.exports = mongoose.model('Route', routeSchema);
