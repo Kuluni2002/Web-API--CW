@@ -38,8 +38,7 @@ const operatorSchema = new mongoose.Schema({
 
 // Index for efficient queries
 //operatorSchema.index({ name: 1 });
-//operatorSchema.index({ permitNumber: 1 });
-//operatorSchema.index({ isActive: 1 });
+
 
 operatorSchema.pre('save', async function(next) {
     console.log('Pre-save middleware triggered'); // Debug log
