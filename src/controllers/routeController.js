@@ -182,7 +182,6 @@ const getRouteByNumber = async (req, res) => {
     }
 };
 
-// Function updateRoute: async function with req and res, gets id from params, updates using findByIdAndUpdate with req.body, new true, runValidators true, if not found return 404, returns 200 with updated route, use try-catch
 const updateRoute = async (req, res) => {
     try {
         const { id } = req.params;
@@ -198,12 +197,7 @@ const updateRoute = async (req, res) => {
                     });
                 }
 
-                if (!updateData.stops[i].estimatedArrivalTime) {
-                    return res.status(400).json({
-                        success: false,
-                        message: `Estimated arrival time is required for stop ${i + 1}`
-                    });
-                }
+               
             }
         }
 
@@ -314,10 +308,7 @@ const getRouteStops = async (req, res) => {
                 stops: route.stops.map((stop, index) => ({
                     sequence: index + 1, // Array index + 1 for display
                     locationName: stop.locationName,
-                    estimatedArrivalTime: stop.estimatedArrivalTime,
-                    //estimatedDepartureTime: stop.estimatedDepartureTime,
-                    //travelTimeToNext: stop.travelTimeToNext,
-                    //distanceToNext: stop.distanceToNext
+                 
                 })),
                 totalStops: route.stops.length
             }

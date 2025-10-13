@@ -7,16 +7,6 @@ const stopSchema = new mongoose.Schema({
         required: [true, 'Location name is required'],
         trim: true,
         maxlength: [100, 'Location name cannot exceed 100 characters']
-    },
-    estimatedArrivalTime: {
-        type: String, // Format: "HH:MM" (24-hour format)
-        required: [true, 'Estimated arrival time is required'],
-        validate: {
-            validator: function(v) {
-                return /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(v);
-            },
-            message: 'Estimated arrival must be in HH:MM format'
-        }
     }
    
 });
