@@ -5,94 +5,76 @@ const Route = require('../models/route');
 // Function createRoute: async function with req and res, extracts routeNumber, name, origin, destination, distance, estimatedDuration, stops from req.body, creates route using Route.create, returns 201 with success and route data, use try-catch with 500 status
 const createRoute = async (req, res) => {
     try {
-        const { routeNumber, name, origin, destination, totalDistance, estimatedDuration, stops, operatorId } = req.body;
         
-        // Validate required fields
-        if (!routeNumber || !name || !origin || !destination || !stops || !stops.length) {
-            return res.status(400).json({
-                success: false,
-                message: 'Route number, name, origin, destination, and stops are required'
-            });
-        }
+        
+        // Load and check route model
+        const Route = require('../models/route');
+        console.log('🔍 Route model loaded from:', require.resolve('../models/route'));
+        console.log('🔍 Route required paths:', Route.schema.requiredPaths());
+        
+        const { routeNumber, name, origin, destination, totalDistance, estimatedDuration, stops } = req.body;
 
-        // Validate estimatedDuration format
-        if (!estimatedDuration || typeof estimatedDuration.hours !== 'number' || typeof estimatedDuration.minutes !== 'number') {
-            return res.status(400).json({
-                success: false,
-                message: 'Estimated duration must have hours and minutes as numbers'
-            });
-        }
-
-          // Validate estimatedDuration format
-        if (!estimatedDuration || typeof estimatedDuration.hours !== 'number' || typeof estimatedDuration.minutes !== 'number') {
-            return res.status(400).json({
-                success: false,
-                message: 'Estimated duration must have hours and minutes as numbers'
-            });
-        }
-
-        // Validate stops (no order field needed, array index determines sequence)
-        for (let i = 0; i < stops.length; i++) {
-            if (!stops[i].locationName || !stops[i].locationName.trim()) {
-                return res.status(400).json({
-                    success: false,
-                    message: `Location name is required for stop ${i + 1}`
-                });
-            }
-
-            if (!stops[i].estimatedArrivalTime) {
-                return res.status(400).json({
-                    success: false,
-                    message: `Estimated arrival time is required for stop ${i + 1}`
-                });
-            }
-        }
-
-        // Check if route already exists
-        const existingRoute = await Route.findOne({ routeNumber: routeNumber.toUpperCase() });
-        if (existingRoute) {
-            return res.status(409).json({
-                success: false,
-                message: 'Route with this number already exists'
-            });
-        }
-
-        const route = await Route.create({
-            routeNumber: routeNumber.toUpperCase(),
+        // Test 1: Create route object
+        console.log('🔍 Creating route object...');
+        const routeData = {
+            routeNumber,
             name,
             origin,
             destination,
             totalDistance,
             estimatedDuration,
-            operatorId,
-            stops: stops
-        });
+            stops
+        };
+        
+        const route = new Route(routeData);
+        console.log('✅ Route object created');
+        
+        // Test 2: Manual validation
+        console.log('🔍 Running manual validation...');
+        const validationError = route.validateSync();
+        if (validationError) {
+            console.log('❌ Validation errors found:');
+            Object.keys(validationError.errors).forEach(key => {
+                console.log(`   - Field: ${key}`);
+                console.log(`   - Message: ${validationError.errors[key].message}`);
+                console.log(`   - Value: ${validationError.errors[key].value}`);
+                console.log(`   - Path: ${validationError.errors[key].path}`);
+            });
+            
+            return res.status(400).json({
+                success: false,
+                message: 'Validation failed',
+                errors: validationError.errors
+            });
+        }
+        
+        console.log('✅ Manual validation passed');
+        
+        // Test 3: Save to database
+        console.log('🔍 Saving to database...');
+        const savedRoute = await route.save();
+        console.log('✅ Route saved successfully:', savedRoute._id);
 
         res.status(201).json({
             success: true,
             message: 'Route created successfully',
-            data: { route }
+            data: { route: savedRoute }
         });
-    } catch (error) {
 
-        console.error('Create route error:', error);
+    } catch (error) {
+        console.log('\n❌ === ERROR DETAILS ===');
+        console.log('❌ Error name:', error.name);
+        console.log('❌ Error message:', error.message);
+        console.log('❌ Error code:', error.code);
         
-        // Handle duplicate route number
-        if (error.code === 11000) {
-            return res.status(409).json({
-                success: false,
-                message: 'Route with this route number already exists'
+        if (error.errors) {
+            console.log('❌ Error details:');
+            Object.keys(error.errors).forEach(key => {
+                console.log(`   - ${key}: ${error.errors[key].message}`);
             });
         }
         
-        // Handle validation errors
-        if (error.name === 'ValidationError') {
-            return res.status(400).json({
-                success: false,
-                message: 'Validation failed',
-                error: error.message
-            });
-        }
+        console.log('❌ Full error:', error);
 
         res.status(500).json({
             success: false,
@@ -101,31 +83,27 @@ const createRoute = async (req, res) => {
         });
     }
 };
-
-// Function getAllRoutes: async function with req and res, extracts query params origin and destination for filtering, builds filter object checking isActive true, if origin provided add to filter, if destination provided add to filter, finds routes using Route.find with filter, sorts by routeNumber ascending, returns 200 with success, count, and routes array, use try-catch
 const getAllRoutes = async (req, res) => {
     try {
-        const { origin, destination, operatorId, isActive } = req.query;
+        const { origin, destination } = req.query;
         
         // Build filter object
-        const filter = {};
+        const filter = {isActive: true};
 
-        filter.isActive = isActive !== 'false';
+       
         
         if (origin) {
-            filter.startLocation = { $regex: origin, $options: 'i' };
+            filter.origin = { $regex: origin, $options: 'i' };
         }
         
         if (destination) {
-            filter.endLocation = { $regex: destination, $options: 'i' };
+            filter.destination = { $regex: destination, $options: 'i' };
         }
 
-         if (operatorId) {
-            filter.operatorId = operatorId;
-        }
+        
     
         const routes = await Route.find(filter)
-        .populate('operatorId', 'name permitNumber contactNumber email')
+        
         .sort({ routeNumber: 1 })
         .select('-stops');
 
@@ -151,7 +129,7 @@ const getRouteById = async (req, res) => {
         const { id } = req.params;
         
         const route = await Route.findById(id)
-        .populate('operatorId', 'name permitNumber contactNumber email');
+       
 
         if (!route) {
             return res.status(404).json({
@@ -182,7 +160,7 @@ const getRouteByNumber = async (req, res) => {
         const route = await Route.findOne({ 
             routeNumber: routeNumber.toUpperCase(),
             isActive: true 
-        }).populate('operatorId', 'name permitNumber contactNumber email');
+        });
 
         if (!route) {
             return res.status(404).json({
@@ -246,7 +224,7 @@ const updateRoute = async (req, res) => {
                 new: true,
                 runValidators: true
             }
-        ).populate('operatorId', 'name permitNumber contactNumber email');
+        );
 
         if (!route) {
             return res.status(404).json({
@@ -316,7 +294,7 @@ const getRouteStops = async (req, res) => {
 
         const route = await Route.findOne({ 
             routeNumber: routeNumber.toUpperCase(),
-            isActive: true 
+            isActive: true
         }).select('routeNumber name stops origin destination');
 
         if (!route) {
@@ -337,8 +315,8 @@ const getRouteStops = async (req, res) => {
                     sequence: index + 1, // Array index + 1 for display
                     locationName: stop.locationName,
                     estimatedArrivalTime: stop.estimatedArrivalTime,
-                    estimatedDepartureTime: stop.estimatedDepartureTime,
-                    travelTimeToNext: stop.travelTimeToNext,
+                    //estimatedDepartureTime: stop.estimatedDepartureTime,
+                    //travelTimeToNext: stop.travelTimeToNext,
                     //distanceToNext: stop.distanceToNext
                 })),
                 totalStops: route.stops.length
@@ -353,48 +331,7 @@ const getRouteStops = async (req, res) => {
     }
 };
 
-const searchRoutes = async (req, res) => {
-    try {
-        const { q, routeType, operatorId } = req.query;
 
-        let filter = { isActive: true };
-
-        if (q) {
-            filter.$or = [
-                { routeNumber: { $regex: q, $options: 'i' } },
-                { name: { $regex: q, $options: 'i' } },
-                { origin: { $regex: q, $options: 'i' } },
-                { destination: { $regex: q, $options: 'i' } }
-            ];
-        }
-
-        if (routeType) {
-            filter.routeType = routeType;
-        }
-
-        if (operatorId) {
-            filter.operatorId = operatorId;
-        }
-
-        const routes = await Route.find(filter)
-            .populate('operatorId', 'name permitNumber')
-            .sort({ routeNumber: 1 })
-            .select('-stops')
-            .limit(20); // Limit results for performance
-
-        res.status(200).json({
-            success: true,
-            count: routes.length,
-            data: { routes }
-        });
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: 'Error searching routes',
-            error: error.message
-        });
-    }
-};
 
 
 
@@ -406,6 +343,5 @@ module.exports = {
     getRouteByNumber,
     updateRoute,
     deleteRoute,
-    getRouteStops,
-    searchRoutes
+    getRouteStops
 };

@@ -7,7 +7,32 @@ const Operator = require('../models/operator');
 // Function createOperator: async function with req and res, extracts name, contactNumber, email, permitNumber from req.body, creates new operator using Operator.create, returns 201 with success true and operator data, use try-catch with 500 status for errors
 const createOperator = async (req, res) => {
     try {
+        console.log(' Request body:', req.body);
+        
         const { name, contactNumber, email, password } = req.body;
+        
+        console.log(' Extracted fields:', { name, contactNumber, email, password: '***' });
+        
+        // Check if operator already exists (manual check)
+        const existingOperator = await Operator.findOne({
+            $or: [
+                { name: name },
+                { email: email },
+                { contactNumber: contactNumber }
+            ]
+        });
+        
+        console.log(' Existing operator check:', existingOperator);
+        
+        if (existingOperator) {
+            console.log(' Found duplicate operator');
+            return res.status(400).json({
+                success: false,
+                message: 'Operator with similar details already exists'
+            });
+        }
+        
+        console.log(' No duplicates found, creating operator...');
         
         const operator = await Operator.create({
             name,
@@ -16,13 +41,14 @@ const createOperator = async (req, res) => {
             password
         });
 
+        console.log(' Operator created successfully:', operator._id);
+
         // Return operator without password
         const operatorData = {
             id: operator._id,
             name: operator.name,
             email: operator.email,
-            phone: operator.phone,
-            status: operator.status,
+            contactNumber: operator.contactNumber,
             createdAt: operator.createdAt
         };
 
@@ -33,21 +59,19 @@ const createOperator = async (req, res) => {
             }
         });
     } catch (error) {
-        console.error('Create operator error:', error);
+        console.error(' Create operator error:', error);
+        console.error('Error code:', error.code);
+        console.error('Error name:', error.name);
 
         // Handle Mongoose duplicate key error (E11000)
         if (error.code === 11000) {
-            // Check which field caused the duplicate
-            if (error.keyPattern?.email) {
-                return res.status(409).json({
-                    success: false,
-                    message: 'Operator with this email already exists'
-                });
-            }
-            // Generic duplicate message if field isn't clear
+            console.error(' MongoDB duplicate key error detected');
+            console.error('Key pattern:', error.keyPattern);
+            
             return res.status(409).json({
                 success: false,
-                message: 'Duplicate entry detected'
+                message: 'Duplicate entry detected',
+                details: error.keyPattern // Add this to see which field
             });
         }
 
