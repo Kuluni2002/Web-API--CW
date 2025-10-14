@@ -35,6 +35,22 @@ const locationSchema = new mongoose.Schema({
         required: [true, 'Stop sequence is required']
     },
 
+    // Add after stopSequence or wherever appropriate
+latitude: {
+    type: Number,
+    required: [true, 'Latitude is required'],
+    min: -90,
+    max: 90
+},
+longitude: {
+    type: Number,
+    required: [true, 'Longitude is required'],
+    min: -180,
+    max: 180
+},
+
+
+
       // Scheduled arrival time for this stop (from trip)
     scheduledArrival: {
         type: String,

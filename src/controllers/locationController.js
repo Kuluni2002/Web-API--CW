@@ -20,7 +20,7 @@ const getCurrentTime = () => {
 // OPERATOR: Record location update
 const recordLocation = async (req, res) => {
     try {
-        const { busRegistrationNumber, stopName, actualArrival, notes } = req.body;
+        const { busRegistrationNumber, stopName, actualArrival, notes, latitude, longitude } = req.body;
 
         console.log(' Recording location:', { busRegistrationNumber, stopName, actualArrival });
 
@@ -133,6 +133,8 @@ const stopInfo = trip.stops[stopIndex];
             delayMinutes: delayMinutes,
             status: status,
             notes: notes || '',
+            latitude: latitude,
+            longitude: longitude,
             timestamp: new Date()
         });
 

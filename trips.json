@@ -1,0 +1,67 @@
+[
+  
+  {
+    "tripId": "68ed79ff04b09cc9edd488a5",
+    "busRegistrationNumber": "NC-1438",
+    "routeNumber": "57",
+    "stops": [
+      {
+        "stopName": "Colombo",
+       "scheduledArrival": "04:50",
+       
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Kurunegala",
+        "scheduledArrival": "07:20",
+        "latitude": 7.4863,
+        "longitude": 80.3647
+      },
+      {
+        "stopName": "Thambuththegama",
+        "scheduledArrival": "08:00",
+        "latitude": 8.1442,
+        "longitude": 80.3888
+      },
+      {
+        "stopName": "Anuradhapura",
+        "scheduledArrival": "10:05",
+        "latitude": 8.3114,
+        "longitude": 80.4037
+      }
+    ]
+  },
+   {
+    "tripId": "68ee23e7e6d1fe79469634fa",
+    "busRegistrationNumber": "NC-1435",
+    "routeNumber": "57",
+    "stops": [
+      {
+        "stopName": "Colombo",
+       
+        "scheduledDeparture": "05:50",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Kurunegala",
+        "scheduledArrival": "08:20",
+        "latitude": 7.4863,
+        "longitude": 80.3647
+      },
+      {
+        "stopName": "Thambuththegama",
+        "scheduledArrival": "09:00",
+        "latitude": 8.1442,
+        "longitude": 80.3888
+      },
+      {
+        "stopName": "Anuradhapura",
+        "scheduledArrival": "11:05",
+        "latitude": 8.3114,
+        "longitude": 80.4037
+      }
+    ]
+  }
+]
