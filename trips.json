@@ -1,66 +1,6476 @@
 [
-  
   {
-    "tripId": "68ed79ff04b09cc9edd488a5",
-    "busRegistrationNumber": "NC-1438",
-    "routeNumber": "57",
+    "tripId": "68ee497bff46bd0c7508cd90",
+    "busRegistrationNumber": "NB-8500",
+    "routeNumber": "01",
     "stops": [
       {
         "stopName": "Colombo",
-       "scheduledArrival": "04:50",
-       
+        "scheduledArrival": "06:00",
         "latitude": 6.9271,
         "longitude": 79.8612
       },
       {
-        "stopName": "Kurunegala",
-        "scheduledArrival": "07:20",
-        "latitude": 7.4863,
-        "longitude": 80.3647
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
       },
       {
-        "stopName": "Thambuththegama",
-        "scheduledArrival": "08:00",
-        "latitude": 8.1442,
-        "longitude": 80.3888
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
       },
       {
-        "stopName": "Anuradhapura",
-        "scheduledArrival": "10:05",
-        "latitude": 8.3114,
-        "longitude": 80.4037
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
       }
     ]
   },
-   {
-    "tripId": "68ee23e7e6d1fe79469634fa",
-    "busRegistrationNumber": "NC-1435",
-    "routeNumber": "57",
+  {
+    "tripId": "68ee497bff46bd0c7508cd95",
+    "busRegistrationNumber": "NB-8501",
+    "routeNumber": "02",
     "stops": [
       {
         "stopName": "Colombo",
-       
-        "scheduledDeparture": "05:50",
+        "scheduledArrival": "07:00",
         "latitude": 6.9271,
         "longitude": 79.8612
       },
       {
-        "stopName": "Kurunegala",
-        "scheduledArrival": "08:20",
-        "latitude": 7.4863,
-        "longitude": 80.3647
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
       },
       {
-        "stopName": "Thambuththegama",
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cd9b",
+    "busRegistrationNumber": "NB-8502",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cda3",
+    "busRegistrationNumber": "NB-8503",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
         "scheduledArrival": "09:00",
-        "latitude": 8.1442,
-        "longitude": 80.3888
+        "latitude": 6.9271,
+        "longitude": 79.8612
       },
       {
-        "stopName": "Anuradhapura",
-        "scheduledArrival": "11:05",
-        "latitude": 8.3114,
-        "longitude": 80.4037
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cda9",
+    "busRegistrationNumber": "NB-8504",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cdae",
+    "busRegistrationNumber": "NB-8505",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cdb3",
+    "busRegistrationNumber": "NB-8506",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cdb9",
+    "busRegistrationNumber": "NB-8507",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cdc1",
+    "busRegistrationNumber": "NB-8508",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cdc7",
+    "busRegistrationNumber": "NB-8509",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cdcc",
+    "busRegistrationNumber": "NB-8510",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cdd1",
+    "busRegistrationNumber": "NB-8511",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cdd7",
+    "busRegistrationNumber": "NB-8512",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cddf",
+    "busRegistrationNumber": "NB-8513",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cde5",
+    "busRegistrationNumber": "NB-8514",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cdea",
+    "busRegistrationNumber": "NB-8515",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cdef",
+    "busRegistrationNumber": "NB-8516",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cdf5",
+    "busRegistrationNumber": "NB-8517",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cdfd",
+    "busRegistrationNumber": "NB-8518",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce03",
+    "busRegistrationNumber": "NB-8519",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce08",
+    "busRegistrationNumber": "NB-8520",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce0d",
+    "busRegistrationNumber": "NB-8521",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce13",
+    "busRegistrationNumber": "NB-8522",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce1b",
+    "busRegistrationNumber": "NB-8523",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce21",
+    "busRegistrationNumber": "NB-8524",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce26",
+    "busRegistrationNumber": "NB-8500",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce2b",
+    "busRegistrationNumber": "NB-8501",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce31",
+    "busRegistrationNumber": "NB-8502",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce39",
+    "busRegistrationNumber": "NB-8503",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce3f",
+    "busRegistrationNumber": "NB-8504",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce44",
+    "busRegistrationNumber": "NB-8505",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce49",
+    "busRegistrationNumber": "NB-8506",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce4f",
+    "busRegistrationNumber": "NB-8507",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce57",
+    "busRegistrationNumber": "NB-8508",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce5d",
+    "busRegistrationNumber": "NB-8509",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce62",
+    "busRegistrationNumber": "NB-8510",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce67",
+    "busRegistrationNumber": "NB-8511",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce6d",
+    "busRegistrationNumber": "NB-8512",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce75",
+    "busRegistrationNumber": "NB-8513",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce7b",
+    "busRegistrationNumber": "NB-8514",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce80",
+    "busRegistrationNumber": "NB-8515",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce85",
+    "busRegistrationNumber": "NB-8516",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce8b",
+    "busRegistrationNumber": "NB-8517",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce93",
+    "busRegistrationNumber": "NB-8518",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce99",
+    "busRegistrationNumber": "NB-8519",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ce9e",
+    "busRegistrationNumber": "NB-8520",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cea3",
+    "busRegistrationNumber": "NB-8521",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cea9",
+    "busRegistrationNumber": "NB-8522",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ceb1",
+    "busRegistrationNumber": "NB-8523",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ceb7",
+    "busRegistrationNumber": "NB-8524",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cebc",
+    "busRegistrationNumber": "NB-8500",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cec1",
+    "busRegistrationNumber": "NB-8501",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cec7",
+    "busRegistrationNumber": "NB-8502",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cecf",
+    "busRegistrationNumber": "NB-8503",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ced5",
+    "busRegistrationNumber": "NB-8504",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ceda",
+    "busRegistrationNumber": "NB-8505",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cedf",
+    "busRegistrationNumber": "NB-8506",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cee5",
+    "busRegistrationNumber": "NB-8507",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508ceed",
+    "busRegistrationNumber": "NB-8508",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cef3",
+    "busRegistrationNumber": "NB-8509",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cef8",
+    "busRegistrationNumber": "NB-8510",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cefd",
+    "busRegistrationNumber": "NB-8511",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf03",
+    "busRegistrationNumber": "NB-8512",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf0b",
+    "busRegistrationNumber": "NB-8513",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf11",
+    "busRegistrationNumber": "NB-8514",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf16",
+    "busRegistrationNumber": "NB-8515",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf1b",
+    "busRegistrationNumber": "NB-8516",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf21",
+    "busRegistrationNumber": "NB-8517",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf29",
+    "busRegistrationNumber": "NB-8518",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf2f",
+    "busRegistrationNumber": "NB-8519",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf34",
+    "busRegistrationNumber": "NB-8520",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf39",
+    "busRegistrationNumber": "NB-8521",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf3f",
+    "busRegistrationNumber": "NB-8522",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf47",
+    "busRegistrationNumber": "NB-8523",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf4d",
+    "busRegistrationNumber": "NB-8524",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf52",
+    "busRegistrationNumber": "NB-8500",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf57",
+    "busRegistrationNumber": "NB-8501",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf5d",
+    "busRegistrationNumber": "NB-8502",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf65",
+    "busRegistrationNumber": "NB-8503",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf6b",
+    "busRegistrationNumber": "NB-8504",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf70",
+    "busRegistrationNumber": "NB-8505",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf75",
+    "busRegistrationNumber": "NB-8506",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf7b",
+    "busRegistrationNumber": "NB-8507",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf83",
+    "busRegistrationNumber": "NB-8508",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf89",
+    "busRegistrationNumber": "NB-8509",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf8e",
+    "busRegistrationNumber": "NB-8510",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf93",
+    "busRegistrationNumber": "NB-8511",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cf99",
+    "busRegistrationNumber": "NB-8512",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfa1",
+    "busRegistrationNumber": "NB-8513",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfa7",
+    "busRegistrationNumber": "NB-8514",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfac",
+    "busRegistrationNumber": "NB-8515",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfb1",
+    "busRegistrationNumber": "NB-8516",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfb7",
+    "busRegistrationNumber": "NB-8517",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfbf",
+    "busRegistrationNumber": "NB-8518",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfc5",
+    "busRegistrationNumber": "NB-8519",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfca",
+    "busRegistrationNumber": "NB-8520",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfcf",
+    "busRegistrationNumber": "NB-8521",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfd5",
+    "busRegistrationNumber": "NB-8522",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfdd",
+    "busRegistrationNumber": "NB-8523",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfe3",
+    "busRegistrationNumber": "NB-8524",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfe8",
+    "busRegistrationNumber": "NB-8500",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cfed",
+    "busRegistrationNumber": "NB-8501",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cff3",
+    "busRegistrationNumber": "NB-8502",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508cffb",
+    "busRegistrationNumber": "NB-8503",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d001",
+    "busRegistrationNumber": "NB-8504",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d006",
+    "busRegistrationNumber": "NB-8505",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d00b",
+    "busRegistrationNumber": "NB-8506",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d011",
+    "busRegistrationNumber": "NB-8507",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d019",
+    "busRegistrationNumber": "NB-8508",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d01f",
+    "busRegistrationNumber": "NB-8509",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d024",
+    "busRegistrationNumber": "NB-8510",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d029",
+    "busRegistrationNumber": "NB-8511",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d02f",
+    "busRegistrationNumber": "NB-8512",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d037",
+    "busRegistrationNumber": "NB-8513",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d03d",
+    "busRegistrationNumber": "NB-8514",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d042",
+    "busRegistrationNumber": "NB-8515",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d047",
+    "busRegistrationNumber": "NB-8516",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d04d",
+    "busRegistrationNumber": "NB-8517",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d055",
+    "busRegistrationNumber": "NB-8518",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d05b",
+    "busRegistrationNumber": "NB-8519",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d060",
+    "busRegistrationNumber": "NB-8520",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d065",
+    "busRegistrationNumber": "NB-8521",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d06b",
+    "busRegistrationNumber": "NB-8522",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d073",
+    "busRegistrationNumber": "NB-8523",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d079",
+    "busRegistrationNumber": "NB-8524",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d07e",
+    "busRegistrationNumber": "NB-8500",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d083",
+    "busRegistrationNumber": "NB-8501",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d089",
+    "busRegistrationNumber": "NB-8502",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d091",
+    "busRegistrationNumber": "NB-8503",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d097",
+    "busRegistrationNumber": "NB-8504",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d09c",
+    "busRegistrationNumber": "NB-8505",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0a1",
+    "busRegistrationNumber": "NB-8506",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0a7",
+    "busRegistrationNumber": "NB-8507",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0af",
+    "busRegistrationNumber": "NB-8508",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0b5",
+    "busRegistrationNumber": "NB-8509",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0ba",
+    "busRegistrationNumber": "NB-8510",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0bf",
+    "busRegistrationNumber": "NB-8511",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0c5",
+    "busRegistrationNumber": "NB-8512",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0cd",
+    "busRegistrationNumber": "NB-8513",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0d3",
+    "busRegistrationNumber": "NB-8514",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0d8",
+    "busRegistrationNumber": "NB-8515",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0dd",
+    "busRegistrationNumber": "NB-8516",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0e3",
+    "busRegistrationNumber": "NB-8517",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0eb",
+    "busRegistrationNumber": "NB-8518",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0f1",
+    "busRegistrationNumber": "NB-8519",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0f6",
+    "busRegistrationNumber": "NB-8520",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d0fb",
+    "busRegistrationNumber": "NB-8521",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d101",
+    "busRegistrationNumber": "NB-8522",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d109",
+    "busRegistrationNumber": "NB-8523",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d10f",
+    "busRegistrationNumber": "NB-8524",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d114",
+    "busRegistrationNumber": "NB-8500",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d119",
+    "busRegistrationNumber": "NB-8501",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d11f",
+    "busRegistrationNumber": "NB-8502",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d127",
+    "busRegistrationNumber": "NB-8503",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d12d",
+    "busRegistrationNumber": "NB-8504",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d132",
+    "busRegistrationNumber": "NB-8505",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d137",
+    "busRegistrationNumber": "NB-8506",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d13d",
+    "busRegistrationNumber": "NB-8507",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d145",
+    "busRegistrationNumber": "NB-8508",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d14b",
+    "busRegistrationNumber": "NB-8509",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d150",
+    "busRegistrationNumber": "NB-8510",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d155",
+    "busRegistrationNumber": "NB-8511",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d15b",
+    "busRegistrationNumber": "NB-8512",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d163",
+    "busRegistrationNumber": "NB-8513",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d169",
+    "busRegistrationNumber": "NB-8514",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d16e",
+    "busRegistrationNumber": "NB-8515",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d173",
+    "busRegistrationNumber": "NB-8516",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d179",
+    "busRegistrationNumber": "NB-8517",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d181",
+    "busRegistrationNumber": "NB-8518",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d187",
+    "busRegistrationNumber": "NB-8519",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d18c",
+    "busRegistrationNumber": "NB-8520",
+    "routeNumber": "01",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "06:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "07:23",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "08:46",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:09",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d191",
+    "busRegistrationNumber": "NB-8521",
+    "routeNumber": "02",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "07:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "07:52",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      },
+      {
+        "stopName": "Kalutara",
+        "scheduledArrival": "08:44",
+        "latitude": 6.5836,
+        "longitude": 79.9607
+      },
+      {
+        "stopName": "Ambalangoda",
+        "scheduledArrival": "09:36",
+        "latitude": 6.2359,
+        "longitude": 80.0537
+      },
+      {
+        "stopName": "Galle",
+        "scheduledArrival": "10:28",
+        "latitude": 6.0535,
+        "longitude": 80.221
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d197",
+    "busRegistrationNumber": "NB-8522",
+    "routeNumber": "17",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "08:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Peradeniya",
+        "scheduledArrival": "08:47",
+        "latitude": 7.2715,
+        "longitude": 80.595
+      },
+      {
+        "stopName": "Kadugannawa",
+        "scheduledArrival": "09:34",
+        "latitude": 7.2542,
+        "longitude": 80.5286
+      },
+      {
+        "stopName": "Ambepussa",
+        "scheduledArrival": "10:21",
+        "latitude": 7.2507,
+        "longitude": 80.1996
+      },
+      {
+        "stopName": "Kaduwela",
+        "scheduledArrival": "11:08",
+        "latitude": 6.9333,
+        "longitude": 79.9672
+      },
+      {
+        "stopName": "Malabe",
+        "scheduledArrival": "11:55",
+        "latitude": 6.9147,
+        "longitude": 79.9725
+      },
+      {
+        "stopName": "Panadura",
+        "scheduledArrival": "12:42",
+        "latitude": 6.7136,
+        "longitude": 79.902
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d19f",
+    "busRegistrationNumber": "NB-8523",
+    "routeNumber": "19",
+    "stops": [
+      {
+        "stopName": "Colombo",
+        "scheduledArrival": "09:00",
+        "latitude": 6.9271,
+        "longitude": 79.8612
+      },
+      {
+        "stopName": "Nittambuwa",
+        "scheduledArrival": "09:56",
+        "latitude": 7.1449,
+        "longitude": 80.1016
+      },
+      {
+        "stopName": "Kegalle",
+        "scheduledArrival": "10:52",
+        "latitude": 7.2513,
+        "longitude": 80.3464
+      },
+      {
+        "stopName": "Mawanella",
+        "scheduledArrival": "11:48",
+        "latitude": 7.2667,
+        "longitude": 80.4667
+      },
+      {
+        "stopName": "Gampola",
+        "scheduledArrival": "12:44",
+        "latitude": 7.1643,
+        "longitude": 80.5696
+      }
+    ]
+  },
+  {
+    "tripId": "68ee497bff46bd0c7508d1a5",
+    "busRegistrationNumber": "NB-8524",
+    "routeNumber": "22",
+    "stops": [
+      {
+        "stopName": "Kandy",
+        "scheduledArrival": "10:00",
+        "latitude": 7.2906,
+        "longitude": 80.6337
+      },
+      {
+        "stopName": "Mahiyangana",
+        "scheduledArrival": "11:40",
+        "latitude": 7.2287,
+        "longitude": 81.0036
+      },
+      {
+        "stopName": "Padiyathalawa",
+        "scheduledArrival": "13:20",
+        "latitude": 7.3667,
+        "longitude": 81.1167
+      },
+      {
+        "stopName": "Ampara",
+        "scheduledArrival": "15:00",
+        "latitude": 7.2919,
+        "longitude": 81.6746
       }
     ]
   }
