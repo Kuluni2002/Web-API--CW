@@ -2,6 +2,7 @@
 // Import jsonwebtoken and User model from ../models/User
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const Operator = require('../models/operator');
 
 // Function protect: async middleware function, accepts req, res, next, declares token variable, checks if req.headers.authorization exists and starts with 'Bearer', extracts token by splitting authorization header and taking second part, if no token return 401 with message 'Not authorized, no token', verifies token using jwt.verify with process.env.JWT_SECRET, gets decoded id, finds user by decoded.id using User.findById and select('-password'), attaches user to req.user, if no user found return 401 with 'User not found', calls next(), use try-catch to return 401 with 'Not authorized, invalid token' on error
 const protect = async (req, res, next) => {
@@ -26,14 +27,18 @@ const protect = async (req, res, next) => {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
         // Find user by decoded.id using User.findById and select('-password')
-        const user = await User.findById(decoded.id).select('-password');
+        let user = await User.findById(decoded.id).select('-password');
 
         // If no user found return 401 with 'User not found'
-        if (!user) {
-            return res.status(401).json({
-                success: false,
-                message: 'User not found'
-            });
+         if (!user) {
+            // Try to find user in Operator collection
+            user = await Operator.findById(decoded.id).select('-password');
+            if (!user) {
+                return res.status(401).json({
+                    success: false,
+                    message: 'User not found'
+                });
+            }
         }
 
         // Attach user to req.user

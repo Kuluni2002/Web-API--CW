@@ -7,7 +7,6 @@ const router = express.Router();
 const {
     recordLocation,
     getLocationHistory,
-    getLatestLocation,
     getLiveLocations,
     deleteLocationHistory,
     getBusLocationOnRoute   
@@ -20,13 +19,13 @@ const { protect, authorize } = require('../middleware/auth');
 // POST / uses authorize with operator role, calls recordLocation
 router.post('/', protect, authorize('operator'), recordLocation);
 
-router.get('/bus/:busId/route/:routeId', protect, getBusLocationOnRoute);
+router.get('/bus/:busRegistrationNumber/route/:routeNumber', protect, getBusLocationOnRoute);
 
 // GET /trip/:tripId/history calls getLocationHistory
 router.get('/trip/:tripId/history', protect, getLocationHistory);
 
 // GET /trip/:tripId/latest calls getLatestLocation
-router.get('/trip/:tripId/latest', protect, getLatestLocation);
+//router.get('/trip/:tripId/latest', protect, getLatestLocation);
 
 // GET /live calls getLiveLocations (accessible to all authenticated users)
 router.get('/live', protect, getLiveLocations);

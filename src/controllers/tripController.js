@@ -1,105 +1,61 @@
-// Trip controller for bus trip scheduling and management
-// Import Trip, Bus, Route, Operator models from ../models
 const Trip = require('../models/trip');
-const Bus = require('../models/bus');
 const Route = require('../models/route');
-//const Operator = require('../models/operator');
 
-
-const timeToMinutes = (timeString) => {
-    if (!timeString) return 0;
-    const [hours, minutes] = timeString.split(':').map(Number);
-    return hours * 60 + minutes;
-};
-
-// Helper function to get current time in HH:MM format
-const getCurrentTime = () => {
-    const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    return `${hours}:${minutes}`;
-};
-
-// Function createTrip: async, extracts tripNumber, bus, route, scheduledDeparture, scheduledArrival, direction, serviceType, fare, driver from req.body, gets operator from req.user.operatorId or extracts from body, validates scheduledArrival is after scheduledDeparture, creates trip using Trip.create, returns 201 with trip data, use try-catch with 500 status
+// Create a new trip
 const createTrip = async (req, res) => {
     try {
         const { 
-          runningNumber, 
+            runningNumber, 
             busRegistrationNumber, 
             routeNumber, 
             scheduledDeparture, 
             scheduledArrival, 
+            stops,
             serviceType 
         } = req.body;
 
-       // Validate required fields
-        if (!runningNumber || !busRegistrationNumber || !routeNumber || !scheduledDeparture || !scheduledArrival) {
+        // Validate that route exists
+        const route = await Route.findOne({ routeNumber: routeNumber.toUpperCase() });
+        if (!route) {
             return res.status(400).json({
                 success: false,
-                message: 'All required fields must be provided: runningNumber, busRegistrationNumber, routeNumber, scheduledDeparture, scheduledArrival'
+                message: 'Route not found'
             });
         }
 
-       // Validate time format
-        const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
-        if (!timeRegex.test(scheduledDeparture)) {
+        // Validate stops match route stops
+        if (!stops || stops.length !== route.stops.length) {
             return res.status(400).json({
                 success: false,
-                message: 'Scheduled departure must be in HH:MM format (e.g., 08:30)'
-            });
-        }
-
-        if (!timeRegex.test(scheduledArrival)) {
-            return res.status(400).json({
-                success: false,
-                message: 'Scheduled arrival must be in HH:MM format (e.g., 10:30)'
-            });
-        }
-
-        // Validate arrival is after departure
-        const depMinutes = timeToMinutes(scheduledDeparture);
-        const arrMinutes = timeToMinutes(scheduledArrival);
-        
-        if (arrMinutes <= depMinutes) {
-            return res.status(400).json({
-                success: false,
-                message: 'Scheduled arrival must be after scheduled departure'
+                message: 'Stops must match the route stops'
             });
         }
 
         const trip = await Trip.create({
-            runningNumber: runningNumber.toUpperCase(),
-            busRegistrationNumber: busRegistrationNumber.toUpperCase(),
-            routeNumber: routeNumber,
-            scheduledDeparture: scheduledDeparture,
-            scheduledArrival: scheduledArrival,
-            serviceType: serviceType || 'normal',
-            status: 'scheduled'
+            runningNumber,
+            busRegistrationNumber,
+            routeNumber,
+            scheduledDeparture,
+            scheduledArrival,
+            stops,
+            serviceType
         });
-
-        // Populate virtual fields and return
-        const populatedTrip = await Trip.findById(trip._id)
-            .populate('busDetails', 'registrationNumber type capacity status operator')
-            .populate('routeDetails', 'routeNumber origin destination distance');
 
         res.status(201).json({
             success: true,
             message: 'Trip created successfully',
-            data: { trip: populatedTrip }
+            data: { trip }
         });
     } catch (error) {
-        //console.error('Create trip error:', error);
+        console.error('Create trip error:', error);
         
-        // Handle duplicate trip number
         if (error.code === 11000) {
             return res.status(409).json({
                 success: false,
-                message: 'Trip with this running number already exists',
-                error: 'Duplicate running number'
+                message: 'Trip with this running number already exists'
             });
         }
         
-        // Handle validation errors
         if (error.name === 'ValidationError') {
             return res.status(400).json({
                 success: false,
@@ -116,49 +72,26 @@ const createTrip = async (req, res) => {
     }
 };
 
-// Function getAllTrips: async, extracts query params date, route, bus, status for filtering, builds filter object, if date provided convert to date range for that day, finds trips using Trip.find with filter, populates bus with select busNumber registrationNumber, populates route with select name routeNumber, sorts by scheduledDeparture ascending, returns 200 with count and trips array, use try-catch
+// Get all trips with filtering
 const getAllTrips = async (req, res) => {
     try {
-        const { status, busRegistrationNumber, routeNumber, date, startTime, endTime, serviceType } = req.query;
+        const { routeNumber, busRegistrationNumber, status, date } = req.query;
         
-        // Build filter object
         const filter = {};
-
-         if (status) {
-            filter.status = status;
-        }
         
-        if (busRegistrationNumber) {
-            filter.busRegistrationNumber = busRegistrationNumber.toUpperCase();
-        }
+        if (routeNumber) filter.routeNumber = routeNumber.toUpperCase();
+        if (busRegistrationNumber) filter.busRegistrationNumber = busRegistrationNumber.toUpperCase();
+        if (status) filter.status = status;
         
-        if (routeNumber) {
-            filter.routeNumber = routeNumber;
-        }
-        
-        if (serviceType) {
-            filter.serviceType = serviceType;
-        }
-
-       // Filter by time range
-        if (startTime && endTime) {
-            filter.scheduledDeparture = { $gte: startTime, $lte: endTime };
-        } else if (startTime) {
-            filter.scheduledDeparture = { $gte: startTime };
-        } else if (endTime) {
-            filter.scheduledDeparture = { $lte: endTime };
-        }
-        
-
         const trips = await Trip.find(filter)
-            .populate('busDetails',  'registrationNumber type status')
-            .populate('routeDetails', 'routeNumber origin destination')
             .sort({ scheduledDeparture: 1 });
 
         res.status(200).json({
-           success: true,
-            count: trips.length,
-            data: { trips }
+            success: true,
+            data: {
+                trips,
+                count: trips.length
+            }
         });
     } catch (error) {
         res.status(500).json({
@@ -169,14 +102,10 @@ const getAllTrips = async (req, res) => {
     }
 };
 
-// Function getTripById: async, gets id from params, finds using findById and populates bus with operator and route fields, if not found return 404, returns 200 with trip data, use try-catch
+// Get trip by ID
 const getTripById = async (req, res) => {
     try {
-        const { id } = req.params;
-        
-        const trip = await Trip.findById(id)
-            .populate('busDetails', 'registrationNumber type status')
-            .populate('routeDetails', 'routeNumber origin destination distance');
+        const trip = await Trip.findById(req.params.id);
 
         if (!trip) {
             return res.status(404).json({
@@ -198,43 +127,17 @@ const getTripById = async (req, res) => {
     }
 };
 
-// Function updateTrip: async, gets id from params, updates using findByIdAndUpdate with req.body, new true, runValidators true, if not found return 404, returns 200 with updated trip, use try-catch
+// Update trip
 const updateTrip = async (req, res) => {
     try {
-        const { id } = req.params;
-        const updates = req.body;
-
-        if (updates.busRegistrationNumber) {
-            updates.busRegistrationNumber = updates.busRegistrationNumber.toUpperCase();
-        }
-
-        if (updates.runningNumber) {
-            updates.runningNumber = updates.runningNumber.toUpperCase();
-        }
-
-            // Validate time formats if provided
-        const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
-        if (updates.scheduledDeparture && !timeRegex.test(updates.scheduledDeparture)) {
-            return res.status(400).json({
-                success: false,
-                message: 'Scheduled departure must be in HH:MM format'
-            });
-        }
-
-        if (updates.scheduledArrival && !timeRegex.test(updates.scheduledArrival)) {
-            return res.status(400).json({
-                success: false,
-                message: 'Scheduled arrival must be in HH:MM format'
-            });
-        }
-
         const trip = await Trip.findByIdAndUpdate(
-            id, 
-            updates, 
-            { new: true, runValidators: true }
-        )
-        .populate('busDetails', 'registrationNumber type status')
-        .populate('routeDetails', 'routeNumber origin destination');
+            req.params.id,
+            req.body,
+            { 
+                new: true, 
+                runValidators: true 
+            }
+        );
 
         if (!trip) {
             return res.status(404).json({
@@ -257,67 +160,37 @@ const updateTrip = async (req, res) => {
     }
 };
 
-// Function updateTripStatus: async, gets id from params, extracts status and actualDeparture or actualArrival from req.body, validates status is valid enum value, if status is in-progress set actualDeparture to now if not provided, if status is completed set actualArrival to now if not provided, updates trip, returns 200 with updated trip, use try-catch
-// Function updateTripStatus: async, gets id from params, extracts status and actualDeparture or actualArrival from req.body, validates status is valid enum value, if status is in-progress set actualDeparture to now if not provided, if status is completed set actualArrival to now if not provided, updates trip, returns 200 with updated trip, use try-catch
+// Update trip status
 const updateTripStatus = async (req, res) => {
     try {
-        const { id } = req.params;
         const { status, actualDeparture, actualArrival } = req.body;
         
-        // Validate status is valid enum value (matches your Trip model)
-        const validStatuses = ['scheduled', 'in-progress', 'completed', 'cancelled', 'delayed'];
+        const validStatuses = ['scheduled', 'in-progress', 'completed', 'cancelled'];
         if (!validStatuses.includes(status)) {
             return res.status(400).json({
                 success: false,
-                message: `Invalid status value. Must be one of: ${validStatuses.join(', ')}`
+                message: 'Invalid status value'
             });
         }
 
         const updateData = { status };
 
-        // If status is in-progress, set actualDeparture to current time if not provided
         if (status === 'in-progress') {
-            updateData.actualDeparture = actualDeparture || getCurrentTime();
+            updateData.actualDeparture = actualDeparture || new Date().toTimeString().slice(0, 5);
         }
 
-        // If status is completed, set actualArrival to current time if not provided
         if (status === 'completed') {
-            updateData.actualArrival = actualArrival || getCurrentTime();
-            // Also ensure actualDeparture is set
-            if (!actualDeparture) {
-                const currentTrip = await Trip.findById(id);
-                if (currentTrip && !currentTrip.actualDeparture) {
-                    updateData.actualDeparture = currentTrip.scheduledDeparture;
-                }
-            }
-        }
-
-        // Validate time formats if provided
-        const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
-        if (actualDeparture && !timeRegex.test(actualDeparture)) {
-            return res.status(400).json({
-                success: false,
-                message: 'Actual departure must be in HH:MM format'
-            });
-        }
-
-        if (actualArrival && !timeRegex.test(actualArrival)) {
-            return res.status(400).json({
-                success: false,
-                message: 'Actual arrival must be in HH:MM format'
-            });
+            updateData.actualArrival = actualArrival || new Date().toTimeString().slice(0, 5);
         }
 
         const trip = await Trip.findByIdAndUpdate(
-            id,
+            req.params.id,
             updateData,
             { 
                 new: true, 
                 runValidators: true 
             }
-        )
-        .populate('busDetails', 'registrationNumber type status')
-        .populate('routeDetails', 'routeNumber origin destination distance');
+        );
 
         if (!trip) {
             return res.status(404).json({
@@ -328,19 +201,10 @@ const updateTripStatus = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            message: `Trip status updated to ${status} successfully`,
+            message: 'Trip status updated successfully',
             data: { trip }
         });
-        
     } catch (error) {
-        if (error.name === 'ValidationError') {
-            return res.status(400).json({
-                success: false,
-                message: 'Validation failed',
-                error: error.message
-            });
-        }
-        
         res.status(500).json({
             success: false,
             message: 'Error updating trip status',
@@ -349,12 +213,14 @@ const updateTripStatus = async (req, res) => {
     }
 };
 
-// Function deleteTrip: async, gets id from params, updates status to cancelled, if not found return 404, returns 200 with success message, use try-catch
+// Delete (cancel) trip
 const deleteTrip = async (req, res) => {
     try {
-       const { id } = req.params;
-        
-        const trip = await Trip.findById(id);
+        const trip = await Trip.findByIdAndUpdate(
+            req.params.id,
+            { status: 'cancelled' },
+            { new: true }
+        );
 
         if (!trip) {
             return res.status(404).json({
@@ -362,18 +228,6 @@ const deleteTrip = async (req, res) => {
                 message: 'Trip not found'
             });
         }
-
-        // Check if trip can be cancelled
-        if (trip.status === 'completed') {
-            return res.status(400).json({
-                success: false,
-                message: 'Cannot cancel completed trip'
-            });
-        }
-        
-        // Update status to cancelled
-        trip.status = 'cancelled';
-        await trip.save();
 
         res.status(200).json({
             success: true,
@@ -388,20 +242,18 @@ const deleteTrip = async (req, res) => {
     }
 };
 
-// Function getActiveTrips: async, finds trips where status is in-progress, populates bus and route, sorts by scheduledDeparture, returns 200 with trips array, use try-catch
+// Get active trips
 const getActiveTrips = async (req, res) => {
     try {
-        const trips = await Trip.find({ 
-            status: { $in: ['scheduled', 'in-progress'] } 
-        })
-        .populate('busDetails', 'registrationNumber type capacity status')
-        .populate('routeDetails', 'routeNumber origin destination distance')
-        .sort({ scheduledDeparture: 1 });
+        const trips = await Trip.find({ status: 'in-progress' })
+            .sort({ scheduledDeparture: 1 });
 
         res.status(200).json({
             success: true,
-            count: trips.length,
-            data: { trips }
+            data: {
+                trips,
+                count: trips.length
+            }
         });
     } catch (error) {
         res.status(500).json({
@@ -412,31 +264,23 @@ const getActiveTrips = async (req, res) => {
     }
 };
 
-// Function getTripsByRoute: async, gets routeId from params, extracts date from query, builds filter with route and optional date, finds trips, populates bus and route, sorts by scheduledDeparture, returns 200 with trips, use try-catch
+// Get trips by route
 const getTripsByRoute = async (req, res) => {
     try {
         const { routeNumber } = req.params;
-        const { startTime, endTime } = req.query;
-        const filter = { routeNumber: routeNumber };
-
-        // Build filter with route and optional time range
-        if (startTime && endTime) {
-            filter.scheduledDeparture = { $gte: startTime, $lte: endTime };
-        } else if (startTime) {
-            filter.scheduledDeparture = { $gte: startTime };
-        } else if (endTime) {
-            filter.scheduledDeparture = { $lte: endTime };
-        }
+        const { date } = req.query;
+        
+        const filter = { routeNumber: routeNumber.toUpperCase() };
 
         const trips = await Trip.find(filter)
-            .populate('busDetails', 'registrationNumber type  status')
-            .populate('routeDetails', 'routeNumber origin destination distance')
             .sort({ scheduledDeparture: 1 });
 
         res.status(200).json({
             success: true,
-            count: trips.length,
-            data: { trips }
+            data: {
+                trips,
+                count: trips.length
+            }
         });
     } catch (error) {
         res.status(500).json({
@@ -447,30 +291,23 @@ const getTripsByRoute = async (req, res) => {
     }
 };
 
-// Function getTripsByBus: async, gets busId from params, extracts date from query, builds filter, finds trips, populates route, sorts by scheduledDeparture, returns 200 with trips, use try-catch
+// Get trips by bus
 const getTripsByBus = async (req, res) => {
     try {
-         const { busRegistrationNumber } = req.params;
+        const { busRegistrationNumber } = req.params;
         const { date } = req.query;
+        
         const filter = { busRegistrationNumber: busRegistrationNumber.toUpperCase() };
 
-       if (startTime && endTime) {
-            filter.scheduledDeparture = { $gte: startTime, $lte: endTime };
-        } else if (startTime) {
-            filter.scheduledDeparture = { $gte: startTime };
-        } else if (endTime) {
-            filter.scheduledDeparture = { $lte: endTime };
-        }
-
         const trips = await Trip.find(filter)
-            .populate('busDetails', 'registrationNumber type capacity status')
-            .populate('routeDetails', 'routeNumber origin destination distance')
             .sort({ scheduledDeparture: 1 });
 
         res.status(200).json({
             success: true,
-            count: trips.length,
-            data: { trips }
+            data: {
+                trips,
+                count: trips.length
+            }
         });
     } catch (error) {
         res.status(500).json({
@@ -481,76 +318,6 @@ const getTripsByBus = async (req, res) => {
     }
 };
 
-const getTripByRunningNumber = async (req, res) => {
-    try {
-        const { runningNumber } = req.params;
-        
-        const trip = await Trip.findOne({ 
-            runningNumber: runningNumber.toUpperCase() 
-        })
-        .populate('busDetails', 'registrationNumber type capacity status operator')
-        .populate('routeDetails', 'routeNumber origin destination distance');
-
-        if (!trip) {
-            return res.status(404).json({
-                success: false,
-                message: 'Trip not found'
-            });
-        }
-
-        res.status(200).json({
-            success: true,
-            data: { trip }
-        });
-
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: 'Error fetching trip by running number',
-            error: error.message
-        });
-    }
-};
-
-const getAvailableBuses = async (req, res) => {
-    try {
-        const { startTime, endTime } = req.query;
-        
-        if (!startTime || !endTime) {
-            return res.status(400).json({
-                success: false,
-                message: 'Start time and end time are required'
-            });
-        }
-
-       // Validate time format
-        const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
-        if (!timeRegex.test(startTime) || !timeRegex.test(endTime)) {
-            return res.status(400).json({
-                success: false,
-                message: 'Time must be in HH:MM format (e.g., 09:00, 13:00)'
-            });
-        }
-
-       // Use the static method from Trip model
-        const availableBuses = await Trip.findAvailableBuses(startTime, endTime);
-
-        res.status(200).json({
-            success: true,
-            count: availableBuses.length,
-            data: { buses: availableBuses }
-        });
-
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: 'Error fetching available buses',
-            error: error.message
-        });
-    }
-};
-
-// Export all functions
 module.exports = {
     createTrip,
     getAllTrips,
@@ -560,7 +327,5 @@ module.exports = {
     deleteTrip,
     getActiveTrips,
     getTripsByRoute,
-    getTripsByBus,
-    getTripByRunningNumber,
-    getAvailableBuses
+    getTripsByBus
 };

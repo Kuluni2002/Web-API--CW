@@ -30,7 +30,8 @@ const operatorSchema = new mongoose.Schema({
         required: [true, 'Password is required'],
         minlength: [6, 'Password must be at least 6 characters'],
         select: false // Don't include password in queries by default
-    }
+    },
+    role: { type: String, default: 'operator', enum: ['operator'] }
     
 }, {
     timestamps: true

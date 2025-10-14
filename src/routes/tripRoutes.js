@@ -29,11 +29,11 @@ router.get('/', protect, getAllTrips);
 // GET /active calls getActiveTrips
 router.get('/active', protect, getActiveTrips);
 
-// GET /route/:routeId calls getTripsByRoute
-router.get('/route/:routeId', protect, getTripsByRoute);
+// GET /route/:routeNumber calls getTripsByRoute
+router.get('/route/:routeNumber', protect, getTripsByRoute);
 
-// GET /bus/:busId calls getTripsByBus
-router.get('/bus/:busId', protect, getTripsByBus);
+// GET /bus/:busRegistrationNumber calls getTripsByBus
+router.get('/bus/:busRegistrationNumber', protect, getTripsByBus);
 
 // GET /:id calls getTripById
 router.get('/:id', protect, getTripById);

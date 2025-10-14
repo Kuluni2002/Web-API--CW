@@ -9,13 +9,13 @@ const createRoute = async (req, res) => {
         
         // Load and check route model
         const Route = require('../models/route');
-        console.log('🔍 Route model loaded from:', require.resolve('../models/route'));
-        console.log('🔍 Route required paths:', Route.schema.requiredPaths());
+        console.log('Route model loaded from:', require.resolve('../models/route'));
+        console.log('Route required paths:', Route.schema.requiredPaths());
         
         const { routeNumber, name, origin, destination, totalDistance, estimatedDuration, stops } = req.body;
 
         // Test 1: Create route object
-        console.log('🔍 Creating route object...');
+        console.log('Creating route object...');
         const routeData = {
             routeNumber,
             name,
@@ -27,13 +27,13 @@ const createRoute = async (req, res) => {
         };
         
         const route = new Route(routeData);
-        console.log('✅ Route object created');
+        console.log('Route object created');
         
         // Test 2: Manual validation
-        console.log('🔍 Running manual validation...');
+        console.log('Running manual validation...');
         const validationError = route.validateSync();
         if (validationError) {
-            console.log('❌ Validation errors found:');
+            console.log('Validation errors found:');
             Object.keys(validationError.errors).forEach(key => {
                 console.log(`   - Field: ${key}`);
                 console.log(`   - Message: ${validationError.errors[key].message}`);
@@ -48,12 +48,12 @@ const createRoute = async (req, res) => {
             });
         }
         
-        console.log('✅ Manual validation passed');
+        console.log('Manual validation passed');
         
-        // Test 3: Save to database
-        console.log('🔍 Saving to database...');
+       
+        console.log(' Saving to database...');
         const savedRoute = await route.save();
-        console.log('✅ Route saved successfully:', savedRoute._id);
+        console.log('Route saved successfully:', savedRoute._id);
 
         res.status(201).json({
             success: true,
@@ -62,19 +62,18 @@ const createRoute = async (req, res) => {
         });
 
     } catch (error) {
-        console.log('\n❌ === ERROR DETAILS ===');
-        console.log('❌ Error name:', error.name);
-        console.log('❌ Error message:', error.message);
-        console.log('❌ Error code:', error.code);
+        console.log('Error name:', error.name);
+        console.log('Error message:', error.message);
+        console.log('Error code:', error.code);
         
         if (error.errors) {
-            console.log('❌ Error details:');
+            console.log('Error details:');
             Object.keys(error.errors).forEach(key => {
                 console.log(`   - ${key}: ${error.errors[key].message}`);
             });
         }
         
-        console.log('❌ Full error:', error);
+        console.log('Full error:', error);
 
         res.status(500).json({
             success: false,

@@ -5,7 +5,22 @@ const locationSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Trip',
         required: [true, 'Trip reference is required'],
-        //index: true
+        index: true
+    },
+
+    busRegistrationNumber: {
+        type: String,
+        required: [true, 'Bus registration number is required'],
+        trim: true,
+        uppercase: true,
+        index: true
+    },
+
+    routeNumber: {
+        type: String,
+        required: [true, 'Route number is required'],
+        trim: true,
+        index: true
     },
      // Current actual stop name where bus is located
     stopName: {
@@ -14,19 +29,36 @@ const locationSchema = new mongoose.Schema({
         trim: true,
         maxlength: [100, 'Stop name cannot exceed 100 characters']
     },
+
+    stopSequence: {
+        type: Number,
+        required: [true, 'Stop sequence is required']
+    },
+
+      // Scheduled arrival time for this stop (from trip)
+    scheduledArrival: {
+        type: String,
+        required: [true, 'Scheduled arrival time is required'],
+        match: [/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/, 'Scheduled arrival must be in HH:MM format']
+    },
     
-    // When bus actually arrived at this stop
+       // When bus actually arrived at this stop
     actualArrival: {
-        type: Date,
-        default: Date.now,
-        required: [true, 'Actual arrival time is required']
+        type: String,
+        required: [true, 'Actual arrival time is required'],
+        match: [/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/, 'Actual arrival must be in HH:MM format']
+    },
+
+      // Calculated delay in minutes (positive = late, negative = early)
+    delayMinutes: {
+        type: Number,
+        required: [true, 'Delay minutes is required']
     },
     
-    // When bus actually departed from this stop (optional)
     actualDeparture: {
-        type: Date
+        type: String,
+        match: [/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/, 'Actual departure must be in HH:MM format']
     },
-    
     // Optional notes from operator
     notes: {
         type: String,
@@ -37,8 +69,8 @@ const locationSchema = new mongoose.Schema({
     // Status of the bus at this location
     status: {
         type: String,
-        enum: ['arrived', 'departed', 'stopped'],
-        default: 'arrived'
+        enum: ['on-time', 'delayed', 'early', 'arrived', 'departed'],
+        required: [true, 'Status is required']
     },
     
     timestamp: {
@@ -47,13 +79,16 @@ const locationSchema = new mongoose.Schema({
         required: [true, 'Timestamp is required']
     }
 }, {
-    timestamps: true
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
 });
 
-// Indexes for efficient queries
+// Compound indexes for efficient queries
+locationSchema.index({ busRegistrationNumber: 1, timestamp: -1 });
 locationSchema.index({ trip: 1, timestamp: -1 });
-locationSchema.index({ timestamp: -1 });
-locationSchema.index({ trip: 1, stopName: 1 });
+locationSchema.index({ routeNumber: 1, timestamp: -1 });
+locationSchema.index({ trip: 1, stopSequence: 1 });
 
 
 // Virtual for time ago
@@ -79,7 +114,5 @@ locationSchema.virtual('isRecent').get(function() {
     return ageMinutes <= 15; // Consider recent if within 15 minutes
 });
 
-locationSchema.set('toJSON', { virtuals: true });
-locationSchema.set('toObject', { virtuals: true });
 
 module.exports = mongoose.model('Location', locationSchema);
