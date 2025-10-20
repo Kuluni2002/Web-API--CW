@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+const { swaggerUi, swaggerSpec } = require('./src/config/swagger');
 
 // Import models to register them with mongoose
 require('./src/models/user');
@@ -21,11 +22,17 @@ app.use(express.json()); // Understand JSON data
 
 // Add this logging middleware after app.use(express.json());
 app.use((req, res, next) => {
-    console.log(`📝 ${req.method} ${req.originalUrl} - ${new Date().toISOString()}`);
-    console.log(`📝 Headers:`, req.headers);
-    console.log(`📝 Body:`, req.body);
+    console.log(`${req.method} ${req.originalUrl} - ${new Date().toISOString()}`);
+    console.log(`Headers:`, req.headers);
+    console.log(`Body:`, req.body);
     next();
 });
+
+// Swagger Documentation
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
+  customCss: '.swagger-ui .topbar { display: none }',
+  customSiteTitle: 'NTC Bus API Documentation'
+}));
 
 // Import routes
 const authRoutes = require('./src/routes/authRoutes');

@@ -16,23 +16,174 @@ const {
 // Import protect and authorize from ../middleware/auth
 const { protect, authorize } = require('../middleware/auth');
 
-// All routes use protect middleware
-// POST / uses authorize with admin roles, calls createBus
+/**
+ * @swagger
+ * /api/buses:
+ *   post:
+ *     summary: Create a new bus
+ *     tags: [Buses]
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - registrationNumber
+ *               - permitNumber
+ *               - operator
+ *               - routeNumber
+ *               - type
+ *               - capacity
+ *               - validityDate
+ *             properties:
+ *               registrationNumber:
+ *                 type: string
+ *                 example: NB-8546
+ *               permitNumber:
+ *                 type: string
+ *                 example: P1001
+ *               operator:
+ *                 type: string
+ *                 example: 68e40e7c493aa86101ad2b59
+ *               routeNumber:
+ *                 type: string
+ *                 example: 57
+ *               type:
+ *                 type: string
+ *                 enum: [Normal, Semi Luxury, Luxury]
+ *                 example: Normal
+ *               capacity:
+ *                 type: integer
+ *                 example: 50
+ *               validityDate:
+ *                 type: string
+ *                 format: date
+ *                 example: 2025-12-31
+ *     responses:
+ *       201:
+ *         description: Bus created
+ *       400:
+ *         description: Validation error
+ *       401:
+ *         description: Not authorized, no token
+ *       403:
+ *         description: User role not authorized
+ */
 router.post('/', protect, authorize('admin'), createBus);
 
-// GET / calls getAllBuses
+/**
+ * @swagger
+ * /api/buses:
+ *   get:
+ *     summary: Get all buses
+ *     tags: [Buses]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: List of buses
+ *       401:
+ *         description: Not authorized, no token
+ */
 router.get('/', protect, getAllBuses);
 
-// GET /operator/:operatorId calls getBusesByOperator
+/**
+ * @swagger
+ * /api/buses/operator/{operatorId}:
+ *   get:
+ *     summary: Get buses by operator
+ *     tags: [Buses]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: operatorId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: List of buses for operator
+ *       401:
+ *         description: Not authorized, no token
+ *       403:
+ *         description: Access denied
+ */
 router.get('/operator/:operatorId', protect, getBusesByOperator);
 
-// GET /:id calls getBusById
+/**
+ * @swagger
+ * /api/buses/{id}:
+ *   get:
+ *     summary: Get bus by ID
+ *     tags: [Buses]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Bus details
+ *       404:
+ *         description: Bus not found
+ */
 router.get('/:id', protect, getBusById);
 
-// PUT /:id uses authorize with admin roles, calls updateBus
+/**
+ * @swagger
+ * /api/buses/{id}:
+ *   put:
+ *     summary: Update bus details
+ *     tags: [Buses]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *     responses:
+ *       200:
+ *         description: Bus updated
+ *       404:
+ *         description: Bus not found
+ */
 router.put('/:id', protect, authorize('admin'), updateBus);
 
-// DELETE /:id uses authorize with admin, calls deleteBus
+/**
+ * @swagger
+ * /api/buses/{id}:
+ *   delete:
+ *     summary: Delete bus
+ *     tags: [Buses]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Bus retired successfully
+ *       404:
+ *         description: Bus not found
+ */
 router.delete('/:id', protect, authorize('admin'), deleteBus);
 
 // Export router

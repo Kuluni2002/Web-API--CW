@@ -19,32 +19,254 @@ const {
 // Import protect and authorize from ../middleware/auth
 const { protect, authorize } = require('../middleware/auth');
 
-// All routes use protect middleware
-// POST / uses authorize with operator role, calls createTrip
+/**
+ * @swagger
+ * /api/trips:
+ *   post:
+ *     summary: Create a new trip
+ *     tags: [Trips]
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - runningNumber
+ *               - busRegistrationNumber
+ *               - routeNumber
+ *               - scheduledDeparture
+ *               - scheduledArrival
+ *               - stops
+ *               - serviceType
+ *             properties:
+ *               runningNumber:
+ *                 type: string
+ *                 example: CKN1
+ *               busRegistrationNumber:
+ *                 type: string
+ *                 example: NB-8546
+ *               routeNumber:
+ *                 type: string
+ *                 example: 57
+ *               scheduledDeparture:
+ *                 type: string
+ *                 example: 08:00
+ *               scheduledArrival:
+ *                 type: string
+ *                 example: 10:30
+ *               stops:
+ *                 type: array
+ *                 items:
+ *                   type: object
+ *                   properties:
+ *                     locationName:
+ *                       type: string
+ *                       example: Colombo
+ *                     estimatedArrivalTime:
+ *                       type: string
+ *                       example: 08:00
+ *               serviceType:
+ *                 type: string
+ *                 example: N
+ *     responses:
+ *       201:
+ *         description: Trip created
+ *       400:
+ *         description: Validation error
+ *       401:
+ *         description: Not authorized, no token
+ *       403:
+ *         description: User role not authorized
+ */
 router.post('/', protect, authorize('admin'), createTrip);
 
-// GET / calls getAllTrips (accessible to all authenticated users)
+/**
+ * @swagger
+ * /api/trips:
+ *   get:
+ *     summary: Get all trips
+ *     tags: [Trips]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: List of trips
+ *       401:
+ *         description: Not authorized, no token
+ */
 router.get('/', protect, getAllTrips);
 
-// GET /active calls getActiveTrips
+/**
+ * @swagger
+ * /api/trips/active:
+ *   get:
+ *     summary: Get all active trips
+ *     tags: [Trips]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: List of active trips
+ *       401:
+ *         description: Not authorized, no token
+ */
 router.get('/active', protect, getActiveTrips);
 
-// GET /route/:routeNumber calls getTripsByRoute
+/**
+ * @swagger
+ * /api/trips/route/{routeNumber}:
+ *   get:
+ *     summary: Get trips by route number
+ *     tags: [Trips]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: routeNumber
+ *         required: true
+ *         schema:
+ *           type: string
+ *         example: 57
+ *     responses:
+ *       200:
+ *         description: List of trips for the route
+ *       401:
+ *         description: Not authorized, no token
+ *       404:
+ *         description: Route not found
+ */
 router.get('/route/:routeNumber', protect, getTripsByRoute);
 
-// GET /bus/:busRegistrationNumber calls getTripsByBus
+/**
+ * @swagger
+ * /api/trips/bus/{busRegistrationNumber}:
+ *   get:
+ *     summary: Get trips by bus registration number
+ *     tags: [Trips]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: busRegistrationNumber
+ *         required: true
+ *         schema:
+ *           type: string
+ *         example: NB-8546
+ *     responses:
+ *       200:
+ *         description: List of trips for the bus
+ *       401:
+ *         description: Not authorized, no token
+ *       404:
+ *         description: Bus not found
+ */
 router.get('/bus/:busRegistrationNumber', protect, getTripsByBus);
 
-// GET /:id calls getTripById
+/**
+ * @swagger
+ * /api/trips/{id}:
+ *   get:
+ *     summary: Get trip by ID
+ *     tags: [Trips]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Trip details
+ *       404:
+ *         description: Trip not found
+ */
 router.get('/:id', protect, getTripById);
 
-// PUT /:id uses authorize with operator, calls updateTrip
+/**
+ * @swagger
+ * /api/trips/{id}:
+ *   put:
+ *     summary: Update trip details
+ *     tags: [Trips]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *     responses:
+ *       200:
+ *         description: Trip updated
+ *       404:
+ *         description: Trip not found
+ */
 router.put('/:id', protect, authorize('admin'), updateTrip);
 
-// PUT /:id/status uses authorize with operator, calls updateTripStatus
+/**
+ * @swagger
+ * /api/trips/{id}/status:
+ *   put:
+ *     summary: Update trip status
+ *     tags: [Trips]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               status:
+ *                 type: string
+ *                 example: completed
+ *     responses:
+ *       200:
+ *         description: Trip status updated
+ *       404:
+ *         description: Trip not found
+ */
 router.put('/:id/status', protect, authorize('operator'), updateTripStatus);
 
-// DELETE /:id uses authorize with operator, calls deleteTrip
+/**
+ * @swagger
+ * /api/trips/{id}:
+ *   delete:
+ *     summary: Delete trip
+ *     tags: [Trips]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Trip deleted
+ *       404:
+ *         description: Trip not found
+ */
 router.delete('/:id', protect, authorize('admin'), deleteTrip);
 
 // Export router
